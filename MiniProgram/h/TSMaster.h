@@ -1374,8 +1374,6 @@ typedef struct _realtime_comment_t {
 // callbacks
 typedef void(__cdecl* TCProcedure)(void); 
 typedef void(__stdcall* TOnRpcData)(const pu8 AAddr, const native_int ASize);
-typedef void (__stdcall* TOnAutoSARE2ECanEvt)(const PCANFD ACAN, const u32 ADataId, pu64 AValue);
-typedef void (__stdcall* TOnUSBPlugEvent)(const char* AVidPid, const char* ASerial);
 // Sys Var
 typedef void(__stdcall* TOnSysVarChange)(const char* ACompleteName);
 // IP
@@ -1904,11 +1902,6 @@ typedef s32 (__stdcall* Tpanel_import_configuration)(const char* APanelName, con
 typedef s32 (__stdcall* Tui_graphics_set_y_axis_fixed_range)(const char* AWindowCaption, const s32 AIdxSplit, const char* ASignalName, const double AMin, const double AMax);
 typedef s32 (__stdcall* Texport_system_messages)(const char* AFileName);
 typedef s32 (__stdcall* Tui_graphics_export_csv)(const char* AWindowCaption, const char* ASgnNames, const char* AFileName, const s64 ATimeStartUs, const s64 ATimeEndUs);
-typedef s32 (__stdcall* Tregister_usb_insertion_event)(const pvoid AObj, const TOnUSBPlugEvent AEvent);
-typedef s32 (__stdcall* Tunregister_usb_insertion_event)(const pvoid AObj, const TOnUSBPlugEvent AEvent);
-typedef s32 (__stdcall* Tregister_usb_removal_event)(const pvoid AObj, const TOnUSBPlugEvent AEvent);
-typedef s32 (__stdcall* Tunregister_usb_removal_event)(const pvoid AObj, const TOnUSBPlugEvent AEvent);
-typedef s32 (__stdcall* Tsecurity_check_custom_license_valid)(const char* ALicenseName);
 // >>> mp app prototype end <<<
 
 typedef struct _TTSApp {
@@ -2351,16 +2344,7 @@ typedef struct _TTSApp {
     Tui_graphics_set_y_axis_fixed_range ui_graphics_set_y_axis_fixed_range;
     Texport_system_messages export_system_messages;
     Tui_graphics_export_csv ui_graphics_export_csv;
-    Tregister_usb_insertion_event internal_register_usb_insertion_event;
-    Tunregister_usb_insertion_event internal_unregister_usb_insertion_event;
-    Tregister_usb_removal_event internal_register_usb_removal_event;
-    Tunregister_usb_removal_event internal_unregister_usb_removal_event;
-    Tsecurity_check_custom_license_valid security_check_custom_license_valid;
-    native_int FDummy[611]; // >>> mp app end <<<
-    s32 unregister_usb_removal_event(const TOnUSBPlugEvent AEvent){return internal_unregister_usb_removal_event(FObj, AEvent);}
-    s32 register_usb_removal_event(const TOnUSBPlugEvent AEvent){return internal_register_usb_removal_event(FObj, AEvent);}
-    s32 unregister_usb_insertion_event(const TOnUSBPlugEvent AEvent){return internal_unregister_usb_insertion_event(FObj, AEvent);}
-    s32 register_usb_insertion_event(const TOnUSBPlugEvent AEvent){return internal_register_usb_insertion_event(FObj, AEvent);}
+    native_int FDummy[616]; // >>> mp app end <<<
     s32 start_log_w_filename(const char* AFileName){
         return internal_start_log_w_filename(FObj, AFileName);
     }
@@ -2808,7 +2792,7 @@ typedef s32 (__stdcall* Trawsocket_inet_pton)(s32 af, char* src, pvoid dst);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_set_can_signal)(const pvoid AObj, const native_int AHandle, const char* ASgnAddress, double AValue);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_get_can_signal)(const pvoid AObj, const native_int AHandle, const char* ASgnAddress, pdouble AValue);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_get_lin_signal)(const pvoid AObj, const native_int AHandle, const char* ASgnAddress, pdouble AValue);
-typedef s32 (__stdcall* Trpc_tsmaster_cmd_set_lin_signal)(const pvoid AObj, const native_int AHandle, const char* ASgnAddress, double AValue);
+typedef s32 (__stdcall* Trpc_tsmaster_cmd_set_lin_signal)(const pvoid AObj, const native_int AHandle, const char* ASgnAddress, pdouble AValue);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_set_flexray_signal)(const pvoid AObj, const native_int AHandle, const char* ASgnAddress, double AValue);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_get_flexray_signal)(const pvoid AObj, const native_int AHandle, const char* ASgnAddress, pdouble AValue);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_get_constant)(const pvoid AObj, const native_int AHandle, const char* AConstName, pdouble AValue);
@@ -2842,8 +2826,8 @@ typedef s32 (__stdcall* Trpc_tsmaster_cmd_stop_flexray_rbs)(const pvoid AObj, co
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_is_can_rbs_running)(const pvoid AObj, const native_int AHandle, pbool AIsRunning);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_is_lin_rbs_running)(const pvoid AObj, const native_int AHandle, pbool AIsRunning);
 typedef s32 (__stdcall* Trpc_tsmaster_cmd_is_flexray_rbs_running)(const pvoid AObj, const native_int AHandle, pbool AIsRunning);
-typedef s32 (__stdcall* Ttssocket_add_ipv4_device)(const s32 AChannel, const char* AMacAddress, const s32 AHasVlan, const s32 AVLanID, const s32 AVLanPriority, const char* AIPAddress, const char* AIPMask);
-typedef s32 (__stdcall* Ttssocket_delete_ipv4_device)(const s32 AChannel, const char* AMacAddress, const s32 AHasVlan, const s32 AVLanID, const s32 AVLanPriority, const char* AIPAddress);
+typedef s32 (__stdcall* Ttssocket_add_ipv4_device)(const s32 AChannel, const char* AMacAddress, s32 AHasVlan, s32 AVLanID, s32 AVLanPriority, char* AIPAddress, char* AIPMask);
+typedef s32 (__stdcall* Ttssocket_delete_ipv4_device)(const s32 AChannel, const char* AMacAddress, s32 AHasVlan, s32 AVLanID, s32 AVLanPriority, char* AIPAddress);
 typedef void (__stdcall* Ttsfifo_enable_receive_fifo)(void);
 typedef void (__stdcall* Ttsfifo_disable_receive_fifo)(void);
 typedef s32 (__stdcall* Ttsfifo_add_can_canfd_pass_filter)(s32 AIdxChn, s32 AIdentifier, bool AIsStd);
@@ -2872,29 +2856,6 @@ typedef s32 (__stdcall* Ttsfifo_read_lin_rx_buffer_frame_count)(s32 AIdxChn, ps3
 typedef s32 (__stdcall* Ttsfifo_read_flexray_buffer_frame_count)(s32 AIdxChn, ps32 ACount);
 typedef s32 (__stdcall* Ttsfifo_read_flexray_tx_buffer_frame_count)(s32 AIdxChn, ps32 ACount);
 typedef s32 (__stdcall* Ttsfifo_read_flexray_rx_buffer_frame_count)(s32 AIdxChn, ps32 ACount);
-typedef s32 (__stdcall* Tflexray_rbs_reset_update_bits)(void);
-typedef s32 (__stdcall* Tcan_rbs_reset_update_bits)(void);
-typedef s32 (__stdcall* Tcan_rbs_fault_inject_handle_on_autosar_crc_event)(const pvoid AObj, const TOnAutoSARE2ECanEvt AEvent);
-typedef s32 (__stdcall* Tcan_rbs_fault_inject_handle_on_autosar_rc_event)(const pvoid AObj, const TOnAutoSARE2ECanEvt AEvent);
-typedef s32 (__stdcall* Tcan_rbs_fault_inject_unhandle_on_autosar_rc_event)(const TOnAutoSARE2ECanEvt AEvent);
-typedef s32 (__stdcall* Tcan_rbs_fault_inject_unhandle_on_autosar_crc_event)(const TOnAutoSARE2ECanEvt AEvent);
-typedef s32 (__stdcall* Teth_rbs_set_pdu_phase_and_cycle_by_name)(const s32 AIdxChn, const s32 APhaseMs, const s32 ACycleMs, const char* ANetworkName, const char* ANodeName, const char* APDUName);
-typedef s32 (__stdcall* Tcan_rbs_set_update_bits)(void);
-typedef s32 (__stdcall* Tflexray_rbs_set_update_bits)(void);
-typedef s32 (__stdcall* Trpc_ip_trigger_data_group)(const s32 AGroupId);
-typedef s32 (__stdcall* Tcan_rbs_get_signal_raw_by_address)(const char* ASymbolAddress, pu64 ARaw);
-typedef s32 (__stdcall* Teth_rbs_start)(void);
-typedef s32 (__stdcall* Teth_rbs_stop)(void);
-typedef s32 (__stdcall* Teth_rbs_is_running)(const pbool AIsRunning);
-typedef s32 (__stdcall* Teth_rbs_configure)(const bool AAutoStart, const bool AAutoSendOnModification, const bool AActivateNodeSimulation, const s32 AInitValueOptions);
-typedef s32 (__stdcall* Teth_rbs_activate_all_networks)(const bool AEnable, const bool AIncludingChildren);
-typedef s32 (__stdcall* Teth_rbs_activate_network_by_name)(const s32 AIdxChn, const bool AEnable, const char* ANetworkName, const bool AIncludingChildren);
-typedef s32 (__stdcall* Teth_rbs_activate_node_by_name)(const s32 AIdxChn, const bool AEnable, const char* ANetworkName, char* ANodeName, const bool AIncludingChildren);
-typedef s32 (__stdcall* Teth_rbs_activate_pdu_by_name)(const s32 AIdxChn, const bool AEnable, const char* ANetworkName, char* ANodeName, const char* APDUName);
-typedef s32 (__stdcall* Teth_rbs_get_signal_value_by_element)(const s32 AIdxChn, const char* ANetworkName, char* ANodeName, const char* APDUName, const char* ASignalName, const pdouble AValue);
-typedef s32 (__stdcall* Teth_rbs_set_signal_value_by_element)(const s32 AIdxChn, const char* ANetworkName, char* ANodeName, const char* APDUName, const char* ASignalName, const double AValue);
-typedef s32 (__stdcall* Teth_rbs_get_signal_value_by_address)(const char* ASymbolAddress, const pdouble AValue);
-typedef s32 (__stdcall* Teth_rbs_set_signal_value_by_address)(const char* ASymbolAddress, const double AValue);
 // >>> mp com prototype end <<<
 
 typedef struct _TTSCOM {
@@ -3323,32 +3284,7 @@ typedef struct _TTSCOM {
     Ttsfifo_read_flexray_buffer_frame_count tsfifo_read_flexray_buffer_frame_count;
     Ttsfifo_read_flexray_tx_buffer_frame_count tsfifo_read_flexray_tx_buffer_frame_count;
     Ttsfifo_read_flexray_rx_buffer_frame_count tsfifo_read_flexray_rx_buffer_frame_count;
-    Tflexray_rbs_reset_update_bits flexray_rbs_reset_update_bits;
-    Tcan_rbs_reset_update_bits can_rbs_reset_update_bits;
-    Tcan_rbs_fault_inject_handle_on_autosar_crc_event internal_can_rbs_fault_inject_handle_on_autosar_crc_event;
-    Tcan_rbs_fault_inject_handle_on_autosar_rc_event internal_can_rbs_fault_inject_handle_on_autosar_rc_event;
-    Tcan_rbs_fault_inject_unhandle_on_autosar_rc_event can_rbs_fault_inject_unhandle_on_autosar_rc_event;
-    Tcan_rbs_fault_inject_unhandle_on_autosar_crc_event can_rbs_fault_inject_unhandle_on_autosar_crc_event;
-    Teth_rbs_set_pdu_phase_and_cycle_by_name eth_rbs_set_pdu_phase_and_cycle_by_name;
-    Tcan_rbs_set_update_bits can_rbs_set_update_bits;
-    Tflexray_rbs_set_update_bits flexray_rbs_set_update_bits;
-    Trpc_ip_trigger_data_group rpc_ip_trigger_data_group;
-    Tcan_rbs_get_signal_raw_by_address can_rbs_get_signal_raw_by_address;
-    Teth_rbs_start eth_rbs_start;
-    Teth_rbs_stop eth_rbs_stop;
-    Teth_rbs_is_running eth_rbs_is_running;
-    Teth_rbs_configure eth_rbs_configure;
-    Teth_rbs_activate_all_networks eth_rbs_activate_all_networks;
-    Teth_rbs_activate_network_by_name eth_rbs_activate_network_by_name;
-    Teth_rbs_activate_node_by_name eth_rbs_activate_node_by_name;
-    Teth_rbs_activate_pdu_by_name eth_rbs_activate_pdu_by_name;
-    Teth_rbs_get_signal_value_by_element eth_rbs_get_signal_value_by_element;
-    Teth_rbs_set_signal_value_by_element eth_rbs_set_signal_value_by_element;
-    Teth_rbs_get_signal_value_by_address eth_rbs_get_signal_value_by_address;
-    Teth_rbs_set_signal_value_by_address eth_rbs_set_signal_value_by_address;
-    native_int FDummy[585]; // >>> mp com end <<<
-    s32 can_rbs_fault_inject_handle_on_autosar_rc_event(const TOnAutoSARE2ECanEvt AEvent){return internal_can_rbs_fault_inject_handle_on_autosar_rc_event(FObj, AEvent);}
-    s32 can_rbs_fault_inject_handle_on_autosar_crc_event(const TOnAutoSARE2ECanEvt AEvent){return internal_can_rbs_fault_inject_handle_on_autosar_crc_event(FObj, AEvent);}
+    native_int FDummy[608]; // >>> mp com end <<<
     s32 rpc_tsmaster_cmd_is_flexray_rbs_running(const native_int AHandle, pbool AIsRunning){return internal_rpc_tsmaster_cmd_is_flexray_rbs_running(FObj, AHandle, AIsRunning);}
     s32 rpc_tsmaster_cmd_is_lin_rbs_running(const native_int AHandle, pbool AIsRunning){return internal_rpc_tsmaster_cmd_is_lin_rbs_running(FObj, AHandle, AIsRunning);}
     s32 rpc_tsmaster_cmd_is_can_rbs_running(const native_int AHandle, pbool AIsRunning){return internal_rpc_tsmaster_cmd_is_can_rbs_running(FObj, AHandle, AIsRunning);}
@@ -3632,7 +3568,7 @@ typedef struct _TTSCOM {
     s32 rpc_tsmaster_cmd_get_lin_signal(const native_int AHandle, const char* ASgnAddress, pdouble AValue){
         return internal_rpc_tsmaster_cmd_get_lin_signal(FObj, AHandle, ASgnAddress, AValue);
     }
-    s32 rpc_tsmaster_cmd_set_lin_signal(const native_int AHandle, const char* ASgnAddress, double AValue){
+    s32 rpc_tsmaster_cmd_set_lin_signal(const native_int AHandle, const char* ASgnAddress, pdouble AValue){
         return internal_rpc_tsmaster_cmd_set_lin_signal(FObj, AHandle, ASgnAddress, AValue);
     }
     s32 rpc_tsmaster_cmd_set_flexray_signal(const native_int AHandle, const char* ASgnAddress, double AValue){
@@ -3878,15 +3814,8 @@ extern TTSCOM com;
 extern TTSTest test;
 
 // Utility functions definition
-#ifdef _MSC_VER
-extern void internal_log(const char* AFile, const char* AFunc, const s32 ALine,
-                         const TLogLevel ALevel,
-                         _Printf_format_string_ const char* fmt, ...);
-extern void internal_test_log(const char* AFile, const char* AFunc, const s32 ALine, const TLogLevel ALevel, _Printf_format_string_ const char* fmt, ...);						 
-#else
-extern void internal_log(const char* AFile, const char* AFunc, const s32 ALine, const TLogLevel ALevel, const char* fmt, ...) __attribute__((format(printf, 5, 6)));
-extern void internal_test_log(const char* AFile, const char* AFunc, const s32 ALine, const TLogLevel ALevel, const char* fmt, ...) __attribute__((format(printf, 5, 6)));
-#endif
+extern void internal_log(const char* AFile, const char* AFunc, const s32 ALine, const TLogLevel ALevel, const char* fmt, ...);
+extern void internal_test_log(const char* AFile, const char* AFunc, const s32 ALine, const TLogLevel ALevel, const char* fmt, ...);
 extern void test_logCAN(const char* ADesc, PCAN ACAN, const TLogLevel ALevel);
 #ifndef DONT_USE_TS_LOGGER
     #define log math_log
@@ -4277,7 +4206,6 @@ void output(T* msg);
 #define IDX_ERROR_JAVA_RESERVED7                           358  /* Java reserved 7 */
 #define IDX_ERROR_JAVA_RESERVED8                           359  /* Java reserved 8 */
 #define IDX_ERROR_PREREQUISITE_NOT_SATISFIED               360  /* prerequisite not satisfied */
-#define IDX_ERROR_SWITCH_HW_DIAG_MODE_FIRST                361  /* Switch the transport layer to run on the real-time system */
 // Note: error code should be started with IDX_ERR_
 
 // Software Constants
