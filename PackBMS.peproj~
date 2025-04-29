@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PCANExplorerProject Version="6.0" AppVersion="6.8.0" Name="PackBMS">
+    <Connections AutoReset="0" IgnoreRTRLength="0" ProcessRTR="1">
+        <Connection Name="Connection1" Bus="1" Enabled="0" Protocol="0" CalcBusLoad="1" SymbolsFileName="UNITBMS_RX.sym" ErrorFrames="1" Connection="500kbps@pcan_usb"/>
+    </Connections>
+    <MessageFilters>
+        <MessageFilter Name="Filter1">
+            <MessageFilterItem Enabled="1" Type="0" Bus="0" ID11From="1041" ID11To="1045"/>
+        </MessageFilter>
+        <MessageFilter Name="Filter2">
+            <MessageFilterItem Enabled="1" Type="0" Bus="0" ID11From="1057" ID11To="1063"/>
+        </MessageFilter>
+        <MessageFilter Name="UNITBMS">
+            <MessageFilterItem Enabled="1" Type="0" Bus="0" ID11From="1024" ID11To="1279"/>
+        </MessageFilter>
+        <MessageFilter Name="MD4">
+            <MessageFilterItem Enabled="1" Type="0" Bus="0" ID11From="1089" ID11To="1095"/>
+        </MessageFilter>
+        <MessageFilter Name="Pack">
+            <MessageFilterItem Enabled="1" Type="0" Bus="0" ID11From="1552" ID11To="1791"/>
+        </MessageFilter>
+    </MessageFilters>
+    <ReceiveList Filter="Pack"/>
+    <TransmitList>
+        <TransmitListItem Bus="1" Msg="ID=1792,Type=D,Length=8,Data=00000000A00FF1" CycleTime="100" IsPaused="0" Creator="User"/>
+    </TransmitList>
+    <Files>
+        <File RelativePath="..\02 UnitBMS\UNITBMS_RX.sym"/>
+        <File RelativePath="PackBMS_Sysbol.sym"/>
+        <File RelativePath="TEST.plw"/>
+    </Files>
+</PCANExplorerProject>

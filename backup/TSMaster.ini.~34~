@@ -1,0 +1,361 @@
+﻿[TSMaster]
+DebugMode=0
+LogVerbose=6
+Bounds=0,0,1936,1048
+Maximized=1
+AutoGenConstDef=0
+AutoGenDBConstDef=0
+DisableCrashDialog=0
+UseOutputDbg=1
+SelTxSgn=1
+DisplayHex=1
+DisplaySym=1
+Skin=
+SkinPalette=
+ColorfulMDI=0
+DelConfOnFormDel=1
+AutoSaveBeforeRun=0
+AutoCopyDBToLocal=0
+CustomFont=
+TraceFont=
+AutoHandleFlexRayUB=1
+AutoSavePrj=0
+DelHistoryConfOnSave=1
+DisableToast=0
+DisplayFormByPage=1
+ShowTabGroups=1
+Magnetic=1
+AppName=TSMaster
+DisableResize=0
+AutoHandleCANUB=1
+UBAutoHandle=1
+
+[app_conn_callback_before_connect]
+FlexRay RBS=100
+J1939 TP=400
+Measurement Controller=500
+Channel Selection=200
+CoSimController=100
+CAN RBS=100
+MDI Manager=600
+Signal Server=300
+FlexRay RBS Controller=100
+TSMaster Main Application=100
+CAN / CAN FD Trace 1=100
+Graphics=100
+Ethernet RBS=100
+
+[app_conn_callback_after_connect]
+CAN RBS=300
+MDI Manager=500
+Measurement Comment Manager=200
+LIN RBS=350
+J1939 TP=100
+FlexRay RBS=100
+MP Library Manager=400
+Ribbon Manager=700
+TSMaster Main Application=100
+Measurement Setup=100
+Graphics=100
+Ethernet RBS=100
+Symbol Mapping Manager=100
+
+[app_conn_callback_before_disconnect]
+Signal Server=400
+J1939 TP=300
+LIN RBS=100
+MDI Manager=500
+Symbol Mapping Manager=100
+
+[app_conn_callback_after_disconnect]
+Ribbon Manager=600
+MDI Manager=200
+FlexRay RBS=100
+Bus Log Engine=400
+CAN RBS=300
+CoSimController=100
+Measurement Controller=800
+MP Library Manager=700
+TSMaster Main Application=100
+CAN / CAN FD Trace 1=100
+Measurement Setup=100
+CAN Transmit=100
+Graphics=100
+Ethernet RBS=100
+
+[OnlineReplay]
+CANCount=0
+
+[TsRPC]
+Actv=1
+SizeBytes=1048576
+
+[TsRPCIP]
+Enabled=0
+Port=2809
+Proto=0
+FileCnt=0
+
+[TTsSimManager]
+FullSim=0
+Speed=1
+Step=0.1
+
+[ChannelMappings]
+CANChnCount=1
+CAN0=0,0,3,0,0,14,0,500,2000,TSMaster,TLog1002
+LINChnCount=0
+FlexRayChnCount=0
+EthernetChnCount=0
+AIChnCount=0
+AOChnCount=0
+DIChnCount=0
+DOChnCount=0
+GPSChnCount=0
+CAN1=1,0,3,0,1,14,0,500,2000,TSMaster,TLog1002
+
+[RTL_Form_Position]
+TfrmTSMaster_0=0,0,1936,1048
+TfrmAutomotiveFileConverter=807,457,1684,1069
+TfrmChannelMapping=558,345,1361,797
+TfrmHardware=558,270,1362,871
+TfrmCANDatabase1=772,435,1788,1066
+TfrmLINDatabase=822,485,1737,1040
+TfrmSystemVarMgmt=879,389,1681,1136
+TfrmMPLibrary=-1442,667,-479,1151
+TfrmFlexRayDatabase=703,438,1856,1088
+TfrmSignalMapping=422,208,1497,823
+
+[UserVariables]
+Count=1
+u0=Var0,,,User,0,0,0,100,0,,-1,,,0,-1,MA__
+
+[PluginManager]
+ExternalCount=0
+
+[BusStatistics]
+Enabled=1
+
+[app_hw_selector_conf]
+FEnableTSync=0
+FActiveWirelessOBD=
+FEnableTSWirelessOBD=0
+DeviceCount=0
+FEnableEthernetInterfaceDevice=0
+FNetIfNum=0
+
+[AutoFileConverter]
+UICommon=0,0,0,0,QXV0b21vdGl2ZSBGaWxlIENvbnZlcnRlcg__,100,108,784752449885755562,0
+UIFilter=
+Zoom=1
+AutoShowDir=1
+ExportANSI=1
+
+[MpGen]
+CAN_PackBMS_Sysbol_R1=1
+CAN_PackBMS_Sysbol_R1Alias=
+CAN_PackBMS_Sysbol_R2=1
+CAN_PackBMS_Sysbol_R2Alias=
+CAN_PackBMS_Sysbol_R6=1
+CAN_PackBMS_Sysbol_R6Alias=
+CAN_PackBMS_Sysbol_R9=1
+CAN_PackBMS_Sysbol_R9Alias=
+
+[CAN_Databases]
+DBFilesCount=1
+DBOriCount=1
+ChnCANCount=1
+UICommon=0,-1,0,0,Q0FOIERhdGFiYXNl,100,334,1461981754144828628,0
+UIFilter=
+PropertyHeight=298
+PropertyVisible=1
+HWChnCount=2
+DBFiles0=.\DB\CAN\PackBMS_Sysbol_R9.pdbc
+DBOri0=F:\OneDrive\07 통신규약\00 친환경선박\01 CANDB\01 SubBMS\PackBMS_Sysbol_R9.dbc
+ChnCAN0=0
+
+[MDIInstances]
+TfrmBasePluginSingle.TfrmLicenseClient=0
+TfrmSystemMsgs=0
+TfrmGraphics=3
+TfrmCANStatistics=1
+TfrmCANDatabase=1
+TfrmHardware=0
+TfrmLogging=0
+TfrmPlayback=0
+TfrmCANFDTrace=1
+TfrmCANFDTransmit=1
+TfrmLINTrace=0
+TfrmLINTransmit=0
+TfrmLINDatabase=0
+TfrmChannelMapping=0
+TfrmCCodeEditor=0
+TfrmSettings=0
+TfrmCANRBS=0
+TfrmMPLibrary=0
+TfrmSystemVarMgmt=1
+TfrmMeasurementSetup=1
+TfrmMeasurementDataFilter=0
+TfrmLINRBS=0
+TfrmTSAppHost=0
+TfrmAutomotiveFileConverter=0
+TfrmSignalMapping=0
+TfrmSymbolValue=1
+TfrmSTIM=0
+TfrmFormDocker=0
+TfrmNumeric=2
+TfrmAppManager=0
+TfrmProjectSettings=0
+TfrmSignalTester=0
+TfrmTsRPC=0
+TfrmTSWebServer=0
+TfrmDeployTSMaster=0
+TfrmInitValues=0
+TfrmFlexRayDatabase=0
+TfrmFlexRayTrace=0
+TfrmFlexRayTransmit=0
+TfrmFlexRayRBS=0
+TfrmFlexRayClusterMonitor=0
+TfrmEthernetDatabase=0
+TfrmASN1Database=0
+TfrmEthernetTrace=0
+TfrmEthernetTransmit=0
+TfrmEthernetPackageBuilder=0
+TfrmTCPIPStack=0
+TfrmMpLibBuilder=0
+TfrmAutomationModule=0
+TfrmGPLibrary=0
+TfrmGPBuilder=0
+TfrmMeter=2
+TfrmAutoSARE2EViewer=0
+TfrmEthernetRBS=0
+
+[Pg0]
+Count=4
+f0=TfrmNumeric,0,1493,-2,451,851,0,0,915,443,1
+HiddenCount=16
+f1=TfrmGraphics,0,0,-2,1493,849,0,0,1088,674,1
+f2=TfrmCANFDTrace,0,486,63,1254,528,0,0,1107,442,1
+h0=TfrmCANDatabase,0,0,0,996,588,0,0,887,588,1
+h1=TfrmMeasurementSetup,0,130,144,836,582,130,144,836,582,1
+f3=TfrmCANFDTransmit,0,871,319,920,399,0,0,1061,627,1
+h2=TfrmGraphics,0,-4,0,973,542,0,0,1088,674,1
+h3=TfrmNumeric,1,1534,2,366,707,0,0,915,443,1
+h4=TfrmGraphics,1,0,0,1878,803,0,0,1088,606,1
+f4=TfrmCANFDTrace,0,1121,106,1176,672,0,0,1476,589,1
+h5=TfrmCANStatistics,0,1381,18,284,400,0,0,284,400,1
+f5=TfrmGraphics,1,-5,0,1333,973,0,0,1451,727,1
+h6=TfrmGPBuilder,0,0,0,806,603,0,0,806,603,1
+h7=TfrmAutomationModule,0,130,54,1254,748,130,130,1254,748,1
+h8=TfrmCCodeEditor,0,234,99,1040,704,234,234,1040,704,1
+h9=TfrmMeter,1,0,0,803,537,0,0,803,537,1
+h10=TfrmMeter,0,941,51,803,500,0,0,803,537,1
+h11=TfrmCANFDTrace,0,486,63,1254,528,0,0,1107,442,1
+h12=TfrmCANFDTransmit,0,871,319,920,399,0,0,1061,627,1
+h13=TfrmGraphics,2,0,-2,1878,805,0,0,816,454,1
+h14=TfrmSymbolValue,0,130,130,535,542,130,130,535,542,1
+h15=TfrmSystemVarMgmt,0,-39,88,802,747,182,182,802,747,1
+
+[RTL_Form_Position_MDI]
+TfrmCANDatabase=0,0,1016,631
+TfrmMeasurementSetup=234,234,1070,758
+CANFDTraceOptions=486,63,1740,591
+TfrmNumeric=1493,-2,1944,849
+CANFDTransmit=871,319,1791,718
+Graphics=0,-2,1493,847
+TfrmNumeric1=0,0,915,399
+Graphics1=0,0,1088,606
+TfrmCANStatistics=0,0,284,401
+CCodeEditor=234,99,1274,802
+TfrmGPBuilder=0,0,806,603
+TfrmAutomationModule=130,54,1384,802
+Meter=0,0,803,537
+Meter1=0,0,803,537
+Graphics2=0,0,1088,606
+TfrmSymbolValue=0,0,535,542
+TfrmSystemVarMgmt=182,182,984,929
+
+[PageLayouts]
+DisableResize=0
+Tabbed=0
+PageCnt=1
+ActiveIdx=0
+Pg0=New1
+ScreenWidth=1920
+ScreenHeight=1080
+MainBounds=-8,-8,1928,1040
+PixelsPerInch=96
+AppLeftP=-8
+AppTopP=-8
+
+[MeasurementController]
+MCount=14
+M0=0,1,62,-1,0,TfrmCANDatabase,CAN Database
+M1=0,1,209,-1,1,TfrmCANFDTrace,CAN / CAN FD Trace
+M2=0,1,245,-1,2,TfrmMeasurementSetup,Measurement Setup
+M3=0,1,356,-1,3,TfrmNumeric,Numeric Display
+M4=0,1,58,-1,4,TfrmCANFDTransmit,CAN / CAN FD Transmit
+M5=0,1,177,-1,5,TfrmGraphics,Graphics
+M6=1,1,356,-1,6,TfrmNumeric,Numeric Display [#2]
+M7=1,1,177,-1,7,TfrmGraphics,Graphics [#2]
+M8=0,1,214,-1,8,TfrmCANStatistics,CAN Statistics
+M9=0,1,211,-1,9,TfrmMeter,Meter
+M10=1,1,211,-1,10,TfrmMeter,Meter [#2]
+M11=2,1,177,-1,11,TfrmGraphics,Graphics [#3]
+M12=0,1,119,-1,12,TfrmSymbolValue,Symbol Value
+M13=0,1,3,-1,13,TfrmSystemVarMgmt,System Variable Management
+
+[TS_MAPPING]
+UICommon=0,0,0,0,VFMgQ2hhbm5lbCBNYXBwaW5n,100,659,2371427702566968013,0
+UIFilter=
+
+[hw_app_chn_0]
+PeakUSB_CAN_conf={"FControllerType":0,"FClockMHz":20,"FTSeg1Abr":2,"FTSeg2Abr":1,"FSjwAbr":1,"FPrescalerAbr":10,"FTSeg1Dbr":3,"FTSeg2Dbr":1,"FSjwDbr":1,"FPrescalerDbr":2,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
+PeakUSB_CAN_FilterEn=0
+PeakUSB_CAN_FilterStr=XXXXXXXXXXX
+Kvaser_CAN_conf={"FControllerType":0,"FClockMHz":80,"FTSeg1Abr":119,"FTSeg2Abr":40,"FSjwAbr":40,"FPrescalerAbr":1,"FTSeg1Dbr":29,"FTSeg2Dbr":10,"FSjwDbr":10,"FPrescalerDbr":1,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
+Kvaser_CAN_FilterEn=0
+Kvaser_CAN_FilterStr=XXXXXXXXXXX
+
+[Hardware]
+UICommon=0,0,0,0,SGFyZHdhcmUgQ29uZmlndXJhdGlvbg__,100,1501,5233183884205256866,0
+UIFilter=
+
+[MeasSetup]
+UICommon=0,-1,0,0,TWVhc3VyZW1lbnQgU2V0dXA_,100,49,8922476313026432627,0
+UIFilter=
+Zoom=1
+
+[LIN_Databases]
+UICommon=0,0,0,0,TElOIERhdGFiYXNl,100,480,5236561697231659128,0
+UIFilter=
+HWChnCount=2
+
+[SysVarMgmt]
+UICommon=0,-1,0,0,U3lzdGVtIFZhcmlhYmxlIE1hbmFnZW1lbnQ_,100,98,988822722349678877,0
+UIFilter=
+
+[CANStat]
+UICommon=0,-1,0,0,Q0FOIFN0YXRpc3RpY3M_,100,40,8202181327300248387,0
+UIFilter=
+
+[MPLibrary]
+UICommon=0,0,0,0,TWluaSBQcm9ncmFtIExpYnJhcnk_,100,425,5798104066177538504,0
+UIFilter=
+
+[TfrmGPBuilder]
+UICommon=0,-1,0,0,R3JhcGhpYyBQcm9ncmFtIEJ1aWxkZXI_,100,274,2024932002796992872,0
+UIFilter=
+
+[TfrmFlexRayDatabase]
+UICommon=0,0,0,0,UGxlYXNlIHNlbGVjdCBGbGV4UmF5IFNpZ25hbHMgdG8gYXNzb2NpYXRlIHdpdGg_,100,265,4271383900621153168,0
+UIFilter=
+PropertyHeight=298
+PropertyVisible=1
+HWChnCount=2
+
+[TfrmSignalMapping]
+AutoActivateRBS=1
+
+[TfrmSystemVarMgmt]
+TreeView=1
