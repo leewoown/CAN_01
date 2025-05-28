@@ -1,7 +1,7 @@
 ﻿[TSMaster]
 DebugMode=0
 LogVerbose=6
-Bounds=-8,-8,1910,1022
+Bounds=10,-8,1928,1022
 Maximized=1
 AutoGenConstDef=0
 AutoGenDBConstDef=0
@@ -123,6 +123,20 @@ GPSChnCount=0
 CAN1=1,0,5,0,0,-1989135125,0,500,2000,TSMaster,Kvaser Leaf v3
 CAN2=2,0,3,0,1,14,-1,500,2000,TSMaster,TLog1002
 
+[RTL_Form_Position]
+TfrmTSMaster_0=-8,-1088,1928,-40
+TfrmAutomotiveFileConverter=521,210,1398,822
+TfrmChannelMapping=558,290,1361,742
+TfrmHardware=558,215,1362,816
+TfrmCANDatabase1=452,-856,1468,-225
+TfrmLINDatabase=502,-818,1417,-263
+TfrmSystemVarMgmt=879,389,1681,1136
+TfrmMPLibrary=-1442,667,-479,1151
+TfrmFlexRayDatabase=703,438,1856,1088
+TfrmSignalMapping=422,208,1497,823
+TfrmSettings=846,428,1713,963
+TfrmSystemVarMgmt1=559,197,1361,944
+
 [UserVariables]
 Count=1
 u0=Var0,,,User,0,0,0,100,0,,-1,,,0,-1,MA__
@@ -197,185 +211,33 @@ CAN_generated_CAN_Database_Final=1
 CAN_generated_CAN_Database_FinalAlias=
 CAN_generated_CAN_Database_Partial=1
 CAN_generated_CAN_Database_PartialAlias=
+CAN_PMS_MasterBMS_Ver1=1
+CAN_PMS_MasterBMS_Ver1Alias=
+CAN_Master_SubBMS_R1_Ver1=1
+CAN_Master_SubBMS_R1_Ver1Alias=
+CAN_Master_SubBMS_Ver1=1
+CAN_Master_SubBMS_Ver1Alias=
+CAN_Master_SubBMS_R2_Ver1=1
+CAN_Master_SubBMS_R2_Ver1Alias=
 
 [CAN_Databases]
-DBFilesCount=1
-DBOriCount=1
-ChnCANCount=1
-UICommon=0,-1,0,0,Q0FOIERhdGFiYXNl,100,524,1461981754144828628,0
+DBFilesCount=3
+DBOriCount=3
+ChnCANCount=3
+UICommon=0,-1,0,0,Q0FOIERhdGFiYXNl,100,498,1461981754144828628,0
 UIFilter=
 PropertyHeight=298
 PropertyVisible=1
 HWChnCount=2
-DBFiles0=.\DB\CAN\generated_CAN_Database_Partial.pdbc
-DBOri0=F:\OneDrive\Downloads\generated_CAN_Database_Partial.dbc
+DBFiles0=.\DB\CAN\PMS_MasterBMS_Ver1.pdbc
+DBFiles1=.\DB\CAN\Master_SubBMS_R1_Ver1.pdbc
+DBFiles2=.\DB\CAN\Master_SubBMS_R2_Ver1.pdbc
+DBOri0=.\00 DB_SYS\PMS_MasterBMS_Ver1.dbc
+DBOri1=.\00 DB_SYS\Master_SubBMS_R1_Ver1.dbc
+DBOri2=.\00 DB_SYS\Master_SubBMS_R2_Ver1.dbc
 ChnCAN0=1
-
-[MeasurementController]
-MCount=22
-M0=0,1,62,-1,0,TfrmCANDatabase,CAN Database
-M1=0,1,209,-1,1,TfrmCANFDTrace,CAN / CAN FD Trace
-M2=0,1,245,-1,2,TfrmMeasurementSetup,Measurement Setup
-M3=-1,1,356,-1,3,TfrmNumeric,Deleted: Numeric
-M4=0,1,58,-1,4,TfrmCANFDTransmit,CAN / CAN FD Transmit
-M5=0,1,177,-1,5,TfrmGraphics,MasterBMS
-M6=0,1,356,-1,6,TfrmNumeric,MasterBMS
-M7=-1,1,177,-1,7,TfrmGraphics,Deleted: Graphics
-M8=0,1,214,-1,8,TfrmCANStatistics,CAN Statistics
-M9=0,1,211,-1,9,TfrmMeter,Meter
-M10=1,1,211,-1,10,TfrmMeter,Meter [#2]
-M11=-1,1,177,-1,11,TfrmGraphics,Deleted: Graphics
-M12=0,1,119,-1,12,TfrmSymbolValue,Symbol Value
-M13=0,1,3,-1,13,TfrmSystemVarMgmt,System Variable Management
-M14=-1,1,356,-1,14,TfrmNumeric,Deleted: Numeric
-M15=1,1,209,-1,15,TfrmCANFDTrace,RACK4
-M16=0,1,215,-1,16,TfrmPlayback,Bus Playback
-M17=0,1,213,-1,17,TfrmLogging,Bus Logging
-M18=2,1,209,-1,18,TfrmCANFDTrace,CAN / CAN FD Trace [#3]
-M19=3,1,209,-1,19,TfrmCANFDTrace,RACK3
-M20=1,1,58,-1,20,TfrmCANFDTransmit,CAN / CAN FD Transmit [#2]
-M21=2,1,58,-1,21,TfrmCANFDTransmit,CAN / CAN FD Transmit [#3]
-
-[TS_MAPPING]
-UICommon=0,0,0,0,VFMgQ2hhbm5lbCBNYXBwaW5n,100,659,2371427702566968013,0
-UIFilter=
-
-[hw_app_chn_0]
-PeakUSB_CAN_conf={"FControllerType":0,"FClockMHz":20,"FTSeg1Abr":2,"FTSeg2Abr":1,"FSjwAbr":1,"FPrescalerAbr":10,"FTSeg1Dbr":3,"FTSeg2Dbr":1,"FSjwDbr":1,"FPrescalerDbr":2,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
-PeakUSB_CAN_FilterEn=0
-PeakUSB_CAN_FilterStr=XXXXXXXXXXX
-Kvaser_CAN_conf={"FControllerType":0,"FClockMHz":80,"FTSeg1Abr":119,"FTSeg2Abr":40,"FSjwAbr":40,"FPrescalerAbr":1,"FTSeg1Dbr":29,"FTSeg2Dbr":10,"FSjwDbr":10,"FPrescalerDbr":1,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
-Kvaser_CAN_FilterEn=0
-Kvaser_CAN_FilterStr=XXXXXXXXXXX
-CANFD_2_LIN_2_TS_FD_ControllerType=0
-CANFD_2_LIN_2_TS_FD_ControllerMode=0
-CANFD_2_LIN_2_TS_FD_BaudArb=500
-CANFD_2_LIN_2_TS_FD_BTR0Arb=63
-CANFD_2_LIN_2_TS_FD_BTR1Arb=16
-CANFD_2_LIN_2_TS_FD_SJWArb=15
-CANFD_2_LIN_2_TS_FD_PrescalerArb=1
-CANFD_2_LIN_2_TS_FD_BaudData=2000
-CANFD_2_LIN_2_TS_FD_BTR0Data=15
-CANFD_2_LIN_2_TS_FD_BTR1Data=4
-CANFD_2_LIN_2_TS_FD_SJWData=3
-CANFD_2_LIN_2_TS_FD_PrescalerData=1
-CANFD_2_LIN_2_TS_FD_FilterIdx=0
-CANFD_2_LIN_2_TS_FD_FilterStr=XXXXXXXXXXX
-CANFD_2_LIN_2_TS_FD_Term120=0
-CANFD_2_LIN_2_TS_FD_FAutoRecoverFromBusOff=1
-TSVirtual_CAN_FilterEn=0
-TSVirtual_CAN_FilterStr=XXXXXXXXXXX
-
-[Hardware]
-UICommon=0,0,0,0,SGFyZHdhcmUgQ29uZmlndXJhdGlvbg__,100,1501,5233183884205256866,0
-UIFilter=
-
-[MeasSetup]
-UICommon=0,-1,0,0,TWVhc3VyZW1lbnQgU2V0dXA_,100,87,8922476313026432627,0
-UIFilter=
-Zoom=1
-
-[LIN_Databases]
-UICommon=0,0,0,0,TElOIERhdGFiYXNl,100,480,5236561697231659128,0
-UIFilter=
-HWChnCount=2
-
-[SysVarMgmt]
-UICommon=0,-1,0,0,U3lzdGVtIFZhcmlhYmxlIE1hbmFnZW1lbnQ_,100,155,988822722349678877,0
-UIFilter=
-
-[CANStat]
-UICommon=0,-1,0,0,Q0FOIFN0YXRpc3RpY3M_,100,67,8202181327300248387,0
-UIFilter=
-
-[MPLibrary]
-UICommon=0,0,0,0,TWluaSBQcm9ncmFtIExpYnJhcnk_,100,425,5798104066177538504,0
-UIFilter=
-
-[TfrmGPBuilder]
-UICommon=0,-1,0,0,R3JhcGhpYyBQcm9ncmFtIEJ1aWxkZXI_,100,274,2024932002796992872,0
-UIFilter=
-
-[TfrmFlexRayDatabase]
-UICommon=0,0,0,0,UGxlYXNlIHNlbGVjdCBGbGV4UmF5IFNpZ25hbHMgdG8gYXNzb2NpYXRlIHdpdGg_,100,265,4271383900621153168,0
-UIFilter=
-PropertyHeight=298
-PropertyVisible=1
-HWChnCount=2
-
-[TfrmSignalMapping]
-AutoActivateRBS=1
-
-[TfrmSystemVarMgmt]
-TreeView=1
-
-[OfflineReplay]
-ChnMapping=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64
-
-[Playback]
-UICommon=0,-1,0,0,QnVzIFBsYXliYWNr,100,137,3906028468416693944,0
-UIFilter=
-PostHeight=156
-FilesCount=0
-PostCount=0
-
-[CANLogger0]
-UICommon=0,-1,0,0,QnVzIExvZ2dpbmc_,100,440,1550930406406613747,0
-UIFilter=
-LogName=01 168S1PShipRack2025_05_23_11_59_35.blf
-AddTime=1
-FollowConf=1
-DefaultDir=0
-PromptRename=0
-FileSizeChoice=1
-FrameCount=5000000
-FLoggingFileSizeMBytes=512
-ConvertToAsc=0
-FDataFileFolder=.\Logging\Bus\
-FDataFileNameRule=[Configuration Name][System Time]
-IsLoggingEnabled=1
-
-[hw_app_chn_1]
-TSVirtual_CAN_FilterEn=0
-TSVirtual_CAN_FilterStr=XXXXXXXXXXX
-Kvaser_CAN_conf={"FControllerType":0,"FClockMHz":80,"FTSeg1Abr":119,"FTSeg2Abr":40,"FSjwAbr":40,"FPrescalerAbr":1,"FTSeg1Dbr":29,"FTSeg2Dbr":10,"FSjwDbr":10,"FPrescalerDbr":1,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
-Kvaser_CAN_FilterEn=0
-Kvaser_CAN_FilterStr=XXXXXXXXXXX
-
-[hw_app_chn_2]
-CANFD_2_LIN_2_TS_FD_ControllerType=0
-CANFD_2_LIN_2_TS_FD_ControllerMode=0
-CANFD_2_LIN_2_TS_FD_BaudArb=500
-CANFD_2_LIN_2_TS_FD_BTR0Arb=63
-CANFD_2_LIN_2_TS_FD_BTR1Arb=16
-CANFD_2_LIN_2_TS_FD_SJWArb=15
-CANFD_2_LIN_2_TS_FD_PrescalerArb=1
-CANFD_2_LIN_2_TS_FD_BaudData=2000
-CANFD_2_LIN_2_TS_FD_BTR0Data=15
-CANFD_2_LIN_2_TS_FD_BTR1Data=4
-CANFD_2_LIN_2_TS_FD_SJWData=3
-CANFD_2_LIN_2_TS_FD_PrescalerData=1
-CANFD_2_LIN_2_TS_FD_FilterIdx=0
-CANFD_2_LIN_2_TS_FD_FilterStr=XXXXXXXXXXX
-CANFD_2_LIN_2_TS_FD_Term120=0
-CANFD_2_LIN_2_TS_FD_FAutoRecoverFromBusOff=1
-
-[TfrmSystemVarMgmt1]
-TreeView=1
-
-[RTL_Form_Position]
-TfrmTSMaster_0=10,-8,1928,1022
-TfrmAutomotiveFileConverter=521,210,1398,822
-TfrmChannelMapping=558,290,1361,742
-TfrmHardware=558,215,1362,816
-TfrmCANDatabase1=452,-856,1468,-225
-TfrmLINDatabase=502,-818,1417,-263
-TfrmSystemVarMgmt=879,389,1681,1136
-TfrmMPLibrary=-1442,667,-479,1151
-TfrmFlexRayDatabase=703,438,1856,1088
-TfrmSignalMapping=422,208,1497,823
-TfrmSettings=846,428,1713,963
-TfrmSystemVarMgmt1=559,197,1361,944
+ChnCAN1=0
+ChnCAN2=0
 
 [MDIInstances]
 TfrmBasePluginSingle.TfrmLicenseClient=0
@@ -508,6 +370,116 @@ Pg2=RackBMS_2
 Pg3=RackBMS_3
 Pg4=RackBMS_4
 
+[MeasurementController]
+MCount=24
+M0=0,1,62,-1,0,TfrmCANDatabase,CAN Database
+M1=0,1,209,-1,1,TfrmCANFDTrace,CAN / CAN FD Trace
+M2=0,1,245,-1,2,TfrmMeasurementSetup,Measurement Setup
+M3=1,1,356,-1,3,TfrmNumeric,Rack1_Protect
+M4=0,1,58,-1,4,TfrmCANFDTransmit,CAN / CAN FD Transmit
+M5=0,1,177,-1,5,TfrmGraphics,MasterBMS
+M6=0,1,356,-1,6,TfrmNumeric,MasterBMS
+M7=1,1,177,-1,7,TfrmGraphics,Rack1
+M8=-1,1,214,-1,8,TfrmCANStatistics,Deleted: CANStatistics
+M9=0,1,211,-1,9,TfrmMeter,Meter
+M10=1,1,211,-1,10,TfrmMeter,Meter [#2]
+M11=2,1,177,-1,11,TfrmGraphics,RACK2
+M12=0,1,119,-1,12,TfrmSymbolValue,Symbol Value
+M13=0,1,3,-1,13,TfrmSystemVarMgmt,System Variable Management
+M14=2,1,356,-1,14,TfrmNumeric,Rack1_State
+M15=1,1,209,-1,15,TfrmCANFDTrace,RACK4
+M16=0,1,215,-1,16,TfrmPlayback,Bus Playback
+M17=0,1,213,-1,17,TfrmLogging,Bus Logging
+M18=2,1,209,-1,18,TfrmCANFDTrace,CAN / CAN FD Trace [#3]
+M19=3,1,209,-1,19,TfrmCANFDTrace,RACK3
+M20=1,1,58,-1,20,TfrmCANFDTransmit,CAN / CAN FD Transmit [#2]
+M21=2,1,58,-1,21,TfrmCANFDTransmit,CAN / CAN FD Transmit [#3]
+M22=3,1,356,-1,22,TfrmNumeric,RACK2_Protect
+M23=4,1,356,-1,23,TfrmNumeric,RACK2_STATE
+
+[TS_MAPPING]
+UICommon=0,0,0,0,VFMgQ2hhbm5lbCBNYXBwaW5n,100,659,2371427702566968013,0
+UIFilter=
+
+[hw_app_chn_0]
+PeakUSB_CAN_conf={"FControllerType":0,"FClockMHz":20,"FTSeg1Abr":2,"FTSeg2Abr":1,"FSjwAbr":1,"FPrescalerAbr":10,"FTSeg1Dbr":3,"FTSeg2Dbr":1,"FSjwDbr":1,"FPrescalerDbr":2,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
+PeakUSB_CAN_FilterEn=0
+PeakUSB_CAN_FilterStr=XXXXXXXXXXX
+Kvaser_CAN_conf={"FControllerType":0,"FClockMHz":80,"FTSeg1Abr":119,"FTSeg2Abr":40,"FSjwAbr":40,"FPrescalerAbr":1,"FTSeg1Dbr":29,"FTSeg2Dbr":10,"FSjwDbr":10,"FPrescalerDbr":1,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
+Kvaser_CAN_FilterEn=0
+Kvaser_CAN_FilterStr=XXXXXXXXXXX
+CANFD_2_LIN_2_TS_FD_ControllerType=0
+CANFD_2_LIN_2_TS_FD_ControllerMode=0
+CANFD_2_LIN_2_TS_FD_BaudArb=500
+CANFD_2_LIN_2_TS_FD_BTR0Arb=63
+CANFD_2_LIN_2_TS_FD_BTR1Arb=16
+CANFD_2_LIN_2_TS_FD_SJWArb=15
+CANFD_2_LIN_2_TS_FD_PrescalerArb=1
+CANFD_2_LIN_2_TS_FD_BaudData=2000
+CANFD_2_LIN_2_TS_FD_BTR0Data=15
+CANFD_2_LIN_2_TS_FD_BTR1Data=4
+CANFD_2_LIN_2_TS_FD_SJWData=3
+CANFD_2_LIN_2_TS_FD_PrescalerData=1
+CANFD_2_LIN_2_TS_FD_FilterIdx=0
+CANFD_2_LIN_2_TS_FD_FilterStr=XXXXXXXXXXX
+CANFD_2_LIN_2_TS_FD_Term120=0
+CANFD_2_LIN_2_TS_FD_FAutoRecoverFromBusOff=1
+TSVirtual_CAN_FilterEn=0
+TSVirtual_CAN_FilterStr=XXXXXXXXXXX
+
+[Hardware]
+UICommon=0,0,0,0,SGFyZHdhcmUgQ29uZmlndXJhdGlvbg__,100,1501,5233183884205256866,0
+UIFilter=
+
+[MeasSetup]
+UICommon=0,-1,0,0,TWVhc3VyZW1lbnQgU2V0dXA_,100,88,8922476313026432627,0
+UIFilter=
+Zoom=1
+
+[LIN_Databases]
+UICommon=0,0,0,0,TElOIERhdGFiYXNl,100,480,5236561697231659128,0
+UIFilter=
+HWChnCount=2
+
+[SysVarMgmt]
+UICommon=0,-1,0,0,U3lzdGVtIFZhcmlhYmxlIE1hbmFnZW1lbnQ_,100,177,988822722349678877,0
+UIFilter=
+
+[CANStat]
+UICommon=0,-1,0,0,Q0FOIFN0YXRpc3RpY3M_,100,58,8202181327300248387,0
+UIFilter=
+
+[MPLibrary]
+UICommon=0,0,0,0,TWluaSBQcm9ncmFtIExpYnJhcnk_,100,425,5798104066177538504,0
+UIFilter=
+
+[TfrmGPBuilder]
+UICommon=0,-1,0,0,R3JhcGhpYyBQcm9ncmFtIEJ1aWxkZXI_,100,274,2024932002796992872,0
+UIFilter=
+
+[TfrmFlexRayDatabase]
+UICommon=0,0,0,0,UGxlYXNlIHNlbGVjdCBGbGV4UmF5IFNpZ25hbHMgdG8gYXNzb2NpYXRlIHdpdGg_,100,265,4271383900621153168,0
+UIFilter=
+PropertyHeight=298
+PropertyVisible=1
+HWChnCount=2
+
+[TfrmSignalMapping]
+AutoActivateRBS=1
+
+[TfrmSystemVarMgmt]
+TreeView=1
+
+[OfflineReplay]
+ChnMapping=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64
+
+[Playback]
+UICommon=0,-1,0,0,QnVzIFBsYXliYWNr,100,122,3906028468416693944,0
+UIFilter=
+PostHeight=156
+FilesCount=0
+PostCount=0
+
 [Pg1]
 Count=2
 f0=TfrmNumeric,1,1447,0,465,820,0,0,915,399,1
@@ -548,3 +520,46 @@ HiddenCount=1
 f0=TfrmCANDatabase,0,0,0,1355,826,0,0,1355,841,1
 h0=TfrmCANDatabase,0,0,0,1355,826,0,0,1355,841,1
 
+[CANLogger0]
+UICommon=0,-1,0,0,QnVzIExvZ2dpbmc_,100,529,1550930406406613747,0
+UIFilter=
+LogName=01 168S1PShipRack2025_05_25_10_54_40.blf
+AddTime=1
+FollowConf=1
+DefaultDir=0
+PromptRename=0
+FileSizeChoice=1
+FrameCount=5000000
+FLoggingFileSizeMBytes=512
+ConvertToAsc=0
+FDataFileFolder=.\Logging\Bus\
+FDataFileNameRule=[Configuration Name][System Time]
+IsLoggingEnabled=1
+
+[hw_app_chn_1]
+TSVirtual_CAN_FilterEn=0
+TSVirtual_CAN_FilterStr=XXXXXXXXXXX
+Kvaser_CAN_conf={"FControllerType":0,"FClockMHz":80,"FTSeg1Abr":119,"FTSeg2Abr":40,"FSjwAbr":40,"FPrescalerAbr":1,"FTSeg1Dbr":29,"FTSeg2Dbr":10,"FSjwDbr":10,"FPrescalerDbr":1,"FArbitrationBaudrateBps":500000,"FDataBaudrateBps":2000000,"FSamplingPointMul10Percent":750}
+Kvaser_CAN_FilterEn=0
+Kvaser_CAN_FilterStr=XXXXXXXXXXX
+
+[hw_app_chn_2]
+CANFD_2_LIN_2_TS_FD_ControllerType=0
+CANFD_2_LIN_2_TS_FD_ControllerMode=0
+CANFD_2_LIN_2_TS_FD_BaudArb=500
+CANFD_2_LIN_2_TS_FD_BTR0Arb=63
+CANFD_2_LIN_2_TS_FD_BTR1Arb=16
+CANFD_2_LIN_2_TS_FD_SJWArb=15
+CANFD_2_LIN_2_TS_FD_PrescalerArb=1
+CANFD_2_LIN_2_TS_FD_BaudData=2000
+CANFD_2_LIN_2_TS_FD_BTR0Data=15
+CANFD_2_LIN_2_TS_FD_BTR1Data=4
+CANFD_2_LIN_2_TS_FD_SJWData=3
+CANFD_2_LIN_2_TS_FD_PrescalerData=1
+CANFD_2_LIN_2_TS_FD_FilterIdx=0
+CANFD_2_LIN_2_TS_FD_FilterStr=XXXXXXXXXXX
+CANFD_2_LIN_2_TS_FD_Term120=0
+CANFD_2_LIN_2_TS_FD_FAutoRecoverFromBusOff=1
+
+[TfrmSystemVarMgmt1]
+TreeView=1
