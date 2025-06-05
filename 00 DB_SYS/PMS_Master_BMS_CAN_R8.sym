@@ -1,0 +1,309 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="canmatrix-Export"
+{ENUMS}
+
+
+{SENDRECEIVE}
+
+[SysBatPWR]
+ID=502h
+Type=Standard
+DLC=8
+Var=BSA_Cont_Char_PWR unsigned 0,16 /f:0.1 /min:0 /max:200 /d:0
+Var=BSA_Peak_Char_PWR unsigned 16,16 /f:0.1 /min:0 /max:300 /d:0
+Var=BSA_Cont_DisCha_PWR unsigned 32,16 /f:0.1 /min:0 /max:600 /d:0
+Var=BSA_Peak_DisCha_PWR unsigned 48,16 /f:0.1 /min:0 /max:800 /d:0
+
+[SysCellVolt]
+ID=503h
+Type=Standard
+DLC=8
+Var=BSA_Cell_MaxV unsigned 0,16 /f:0.001 /min:2.8 /max:4.5
+Var=BSA_Cell_MinV unsigned 16,16 /f:0.001 /min:2.8 /max:4.5
+Var=BSA_Cell_AVGV unsigned 32,16 /f:0.001 /min:2.8 /max:4.5
+Var=BSA_Cell_DeviV unsigned 48,16 /min:0 /max:1000 /d:0
+
+[SysCellTemps]
+ID=504h
+Type=Standard
+DLC=8
+Var=BSA_Cell_MaxT signed 0,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=BSA_Cell_MinT signed 16,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=BSA_Cell_AVGT signed 32,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=BSA_Cell_DeviT unsigned 48,16 /f:0.1 /min:0 /max:25 /d:0
+
+[SysCellV_TPos]
+ID=505h
+Type=Standard
+DLC=8
+Var=BSA_Rack_MaxV_Pos unsigned 0,8 /min:1 /max:10
+Var=BSA_Cell_MaxV_Pos unsigned 8,8 /min:1 /max:288
+Var=BSA_Rack_MinV_Pos unsigned 16,8 /min:1 /max:10
+Var=BSA_Cell_MinV_Pos unsigned 24,8 /min:1 /max:288
+Var=BSA_Rack_MaxT_Pos unsigned 32,8 /min:1 /max:10
+Var=BSA_Cell_MaxT_Pos unsigned 40,8 /min:1 /max:288
+Var=BSA_Rack_MinT_Pos unsigned 48,8 /min:1 /max:10
+Var=BSA_Cell_MinT_Pos unsigned 56,8 /min:1 /max:288
+
+[SysBatProtect]
+ID=506h
+Type=Standard
+DLC=8
+Var=BSA_Alarm_OC unsigned 0,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_SOC_OV unsigned 1,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_SOC_UN unsigned 2,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_OV unsigned 3,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_UV unsigned 4,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Cell_OV unsigned 5,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm__Cell_UV unsigned 6,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Cell_UnBalaV unsigned 7,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Dischar_Cell_OT unsigned 8,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Char_Cell_OT unsigned 9,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Char_Cell_UT unsigned 10,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Dischar_Cell_UT unsigned 11,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Cell_UnBalaT unsigned 12,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Const_OP unsigned 13,1 /min:0 /max:1 /d:0
+Var=BSA_Alarm_Peak_OP unsigned 14,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_OC unsigned 16,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_SOC_OV unsigned 17,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_SOC_UN unsigned 18,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_OV unsigned 19,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_UV unsigned 20,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Cell_OV unsigned 21,1 /min:0 /max:1 /d:0
+Var=BSA_Fault__Cell_UV unsigned 22,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Cell_UnBalaV unsigned 23,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Dischar_Cell_OT unsigned 24,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Char_Cell_OT unsigned 25,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Char_Cell_UT unsigned 26,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Dischar_Cell_UT unsigned 27,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Cell_UnBalaT unsigned 28,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Const_OP unsigned 29,1 /min:0 /max:1 /d:0
+Var=BSA_Fault_Peak_OP unsigned 30,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_OC unsigned 32,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_SOC_OV unsigned 33,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_SOC_UN unsigned 34,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_OV unsigned 35,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_UV unsigned 36,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Cell_OV unsigned 37,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct__Cell_UV unsigned 38,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Cell_UnBalaV unsigned 39,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Dischar_Cell_OT unsigned 40,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Char_Cell_OT unsigned 41,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Char_Cell_UT unsigned 42,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Dischar_Cell_UT unsigned 43,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Cell_UnBalaT unsigned 44,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Continuously_OP unsigned 45,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Peak_OP unsigned 46,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_IntCOM unsigned 47,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_ExtOM unsigned 48,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_RelayErr unsigned 49,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_WaterLeak unsigned 50,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_InsulationReg unsigned 51,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_MDSFuse unsigned 52,1 /min:0 /max:1 /d:0
+Var=BSA_Prtct_Cooling_System unsigned 53,1 /min:0 /max:1 /d:0
+Var=PMS_PAR_RelayErr unsigned 54,1 /min:0 /max:1 /d:0
+Var=PMS_PAR_SEQErr unsigned 55,1 /min:0 /max:1 /d:0
+Var=BPU_PAR_RelayErr unsigned 56,1 /min:0 /max:1 /d:0
+Var=BRA_PAR_RelayErr unsigned 57,1 /min:0 /max:1 /d:0
+
+[SysBatDIO]
+ID=507h
+Type=Standard
+DLC=8
+Var=BSA_DO_Prly unsigned 0,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Nrly unsigned 1,1 /min:0 /max:1 /d:0
+Var=BSA_DO_ProRly unsigned 2,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Buzzer unsigned 3,1 /min:0 /max:1 /d:0
+Var=BSA_DO_PwrLamp unsigned 4,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Spare06 unsigned 5,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Spare07 unsigned 6,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Spare08 unsigned 7,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Spare09 unsigned 8,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Spare10 unsigned 9,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Spare11 unsigned 10,1 /min:0 /max:1 /d:0
+Var=BSA_DO_Spare12 unsigned 11,1 /min:0 /max:1 /d:0
+Var=BSA_DI_PRlyAUX unsigned 12,1 /min:0 /max:1 /d:0
+Var=BSA_DI_NRlyAUX unsigned 13,1 /min:0 /max:1 /d:0
+Var=BSA_DI_EMGSw unsigned 14,1 /min:0 /max:1 /d:0
+Var=BSA_DI_CoolSysErr unsigned 15,1 /min:0 /max:1 /d:0
+Var=BSA_DI_MDS unsigned 16,1 /min:0 /max:1 /d:0
+Var=BSA_DI_Spare06 unsigned 17,1 /min:0 /max:1 /d:0
+Var=BSA_DI_Spare07 unsigned 18,1 /min:0 /max:1 /d:0
+Var=BSA_DI_Spare08 unsigned 19,1 /min:0 /max:1 /d:0
+Var=BSA_DI_Spare09 unsigned 20,1 /min:0 /max:1 /d:0
+Var=BSA_DI_Spare10 unsigned 21,1 /min:0 /max:1 /d:0
+Var=BSA_DI_Spare11 unsigned 22,1 /min:0 /max:1 /d:0
+Var=BSA_DI_Spare12 unsigned 23,1 /min:0 /max:1 /d:0
+Var=BSA_SOH unsigned 48,16 /f:0.1 /min:0 /max:100 /d:0
+
+[BRACal]
+ID=508h
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+Var=BRA_RNum_Volt_Total unsigned 16,16 /f:0.1 /min:400 /max:800
+Var=BRA_RNum_Curr_Total signed 32,16 /f:0.1 /min:-500 /max:500 /d:0
+Var=BRA_RNum_SOC unsigned 48,16 /f:0.1 /min:0 /max:100 /d:0
+
+[BRAPWR_A]
+ID=50Ah
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+Var=BRA_RNum_SOH unsigned 16,16 /f:0.1 /min:0 /max:100 /d:0
+Var=BRA_RNum_CONT_Char_PWR unsigned 32,16 /f:0.1 /min:0 /max:200 /d:0
+Var=BRA_RNum_Peak_Char_PWR unsigned 48,16 /f:0.1 /min:0 /max:300 /d:0
+
+[BRAPWR_B]
+ID=50Bh
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+Var=BRA_RNum_CONT_Disch_PWR unsigned 16,16 /f:0.1 /min:0 /max:600 /d:0
+Var=BRA_RNum_Peak_Disch_PWR unsigned 32,16 /f:0.1 /min:0 /max:800 /d:0
+
+[BRACellV]
+ID=50Ch
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+
+[BRACellT]
+ID=50Dh
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+
+[BRACellDiv]
+ID=50Eh
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+
+[BRA_VTPos]
+ID=50Fh
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+Var=BRA_RNum_MaxCell_VoltPos unsigned 16,8 /min:0 /max:288 /d:0
+Var=BRA_RNum_MinCell_VoltPos unsigned 24,8 /min:0 /max:288 /d:0
+Var=BRA_RNum_MaxCell_TempsPos unsigned 32,8 /min:0 /max:288 /d:0
+Var=BRA_RNum_MinCell_TempsPos unsigned 40,8 /min:0 /max:288 /d:0
+
+[BAR_Alarm]
+ID=510h
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+Var=BRA_RNum_Alarm_OC unsigned 16,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_SOC_OV unsigned 17,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_SOC_UN unsigned 18,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_OV unsigned 19,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_UV unsigned 20,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Cell_OV unsigned 21,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm__Cell_UV unsigned 22,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Cell_UnBalaV unsigned 23,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Disch_Cell_OT unsigned 24,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Char_Cell_OT unsigned 25,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Char_Cell_UT unsigned 26,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Disch_Cell_UT unsigned 27,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Cell_UnBalaT unsigned 28,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Conts_OP unsigned 29,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Alarm_Peak_OP unsigned 30,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_OC unsigned 32,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_SOC_OV unsigned 33,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_SOC_UN unsigned 34,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_OV unsigned 35,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_UV unsigned 36,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Cell_OV unsigned 37,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault__Cell_UV unsigned 38,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Cell_UnBalaV unsigned 39,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Disch_Cell_OT unsigned 40,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Char_Cell_OT unsigned 41,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Char_Cell_UT unsigned 42,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Disch_Cell_UT unsigned 43,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Cell_UnBalaT unsigned 44,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Conts_OP unsigned 45,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Fault_Peak_OP unsigned 46,1 /min:0 /max:1 /d:0
+
+[BAR_Protect]
+ID=511h
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+Var=BRA_RNum_Prtct_OC unsigned 16,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_SOC_OV unsigned 17,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_SOC_UN unsigned 18,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_OV unsigned 19,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_UV unsigned 20,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Cell_OV unsigned 21,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct__Cell_UV unsigned 22,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Cell_UnBalaV unsigned 23,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Disch_Cell_OT unsigned 24,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Char_Cell_OT unsigned 25,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Char_Cell_UT unsigned 26,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Disch_Cell_UT unsigned 27,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Cell_UnBalaT unsigned 28,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Conts_OP unsigned 29,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_Peak_OP unsigned 30,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_IntCOM unsigned 31,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_ExtCOM unsigned 32,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_RelayErr unsigned 33,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_WaterLeak unsigned 34,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_ISOReg unsigned 35,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_MDSFuse unsigned 36,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_Prtct_CoolSys unsigned 37,1 /min:0 /max:1 /d:0
+
+[BAR_DIO]
+ID=512h
+Type=Standard
+DLC=8
+Var=BRA_Rack_Num unsigned 0,16 /min:0 /max:10 /d:0
+Var=BRA_RNum_DO_PRly unsigned 16,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DO_NRly unsigned 17,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DO_ProRly unsigned 18,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DO_PWRLamp unsigned 19,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DO_Buzzer unsigned 20,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DI_PRlyAUX unsigned 32,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DI_NRlyAUX unsigned 33,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DI_EMGSW unsigned 34,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_DI_MDS unsigned 35,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_MD1_Wateak unsigned 48,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_MD2_Wateak unsigned 49,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_MD3_Wateak unsigned 50,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_MD4_Wateak unsigned 51,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_MD5_Wateak unsigned 52,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_MD6_Wateak unsigned 53,1 /min:0 /max:1 /d:0
+Var=BRA_RNum_MD7_Wateak unsigned 54,1 /min:0 /max:1 /d:0
+
+[SysBatProduct]
+ID=500h
+Type=Standard
+DLC=8
+Var=BSA_Prd_Year unsigned 0,16 /min:2000 /max:2050
+Var=BSA_Prd_Type unsigned 16,8 /min:0 /max:20 /d:0
+Var=BSA_Prd_Num unsigned 24,8 /min:0 /max:255 /d:0
+Var=BSA_Prd_VER unsigned 32,8 /f:0.1 /min:0 /max:25 /d:0
+Var=BSA_Prd_BSA_Serial unsigned 40,8 /min:0 /max:288 /d:0
+Var=BSA_Prd_BSA_Parallel unsigned 48,8 /min:0 /max:10 /d:0
+
+[SysBatCal]
+ID=501h
+Type=Standard
+DLC=8
+Var=BSA_Volt_Total unsigned 0,16 /f:0.1 /min:400 /max:800
+Var=BSA_Curr_Total signed 16,16 /f:0.1 /min:-500 /max:500 /d:0
+Var=BSA_SOC unsigned 32,16 /f:0.1 /min:0 /max:100 /d:0
+Var=BSA_Divice_Status unsigned 48,16 /min:0 /max:10 /d:0
+
+[PMS]
+ID=700h
+Type=Standard
+DLC=8
+Var=PMSWakeUpCMD unsigned 0,1 /min:0 /max:1 /d:0
+Var=PMSPOWERCMD unsigned 1,1 /min:0 /max:1 /d:0
+Var=PMS_FaultReset unsigned 8,1 /min:0 /max:1 /d:0
+Var=PMSPoRly unsigned 16,1 /min:0 /max:1 /d:0
+Var=PMSProRly unsigned 17,1 /min:0 /max:1 /d:0
+Var=PMSNeRly unsigned 18,1 /min:0 /max:1 /d:0
+
