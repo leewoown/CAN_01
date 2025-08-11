@@ -1,0 +1,335 @@
+VERSION "created by canmatrix"
+
+
+NS_ :
+
+BS_:
+
+BU_: 
+
+
+BO_ 274 MD1_Infr: 8 Vector__XXX
+ SG_ CellEa : 0|8@1+ (1,0) [0|24] "EA" Vector__XXX
+ SG_ SW_Ver : 8|8@1+ (1,0) [0|250] "Ver" Vector__XXX
+ SG_ NorVolt : 16|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ NorCapacity : 32|16@1+ (0.1,0) [0|300] "Ah" Vector__XXX
+ SG_ RackMinVolt : 48|16@1+ (0.001,0) [2.8|4.5] "" Vector__XXX
+
+BO_ 275 MD1_CellVolt: 8 Vector__XXX
+ SG_ MDCellMaxVolt : 0|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellMinVolt : 16|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellAgvVolt : 32|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellDivVolt : 48|16@1+ (1,0) [0|1000] "mV" Vector__XXX
+
+BO_ 276 MD1_CellTemps: 8 Vector__XXX
+ SG_ MDCellMaxTemps : 0|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellMinTemps : 16|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellAgvTemps : 32|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellDivTemps : 48|16@1+ (0.1,0) [0|30] "deg" Vector__XXX
+
+BO_ 277 MD1_State: 8 Vector__XXX
+ SG_ MDTotalVolt : 0|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ MDMaxVoltPo : 16|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinVoltPo : 24|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMaxTempsPo : 32|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinTempsPo : 40|1@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDINITOK : 41|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDFault : 42|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBalance : 43|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDWaterleak : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellVoltErr : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellTempErr : 46|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBATIC1Err : 47|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDCTCOMErr : 48|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MBCOMErr : 49|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ HMICOMErr : 50|1@1+ (1,0) [0|1] "F" Vector__XXX
+
+BO_ 290 MD2_Infr_Copy: 8 Vector__XXX
+ SG_ CellEa : 0|8@1+ (1,0) [0|24] "EA" Vector__XXX
+ SG_ SW_Ver : 8|8@1+ (1,0) [0|250] "Ver" Vector__XXX
+ SG_ NorVolt : 16|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ NorCapacity : 32|16@1+ (0.1,0) [0|300] "Ah" Vector__XXX
+ SG_ RackMinVolt : 48|16@1+ (0.001,0) [2.8|4.5] "" Vector__XXX
+
+BO_ 291 MD2_CellVolt_Copy: 8 Vector__XXX
+ SG_ MDCellMaxVolt : 0|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellMinVolt : 16|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellAgvVolt : 32|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellDivVolt : 48|16@1+ (1,0) [0|1000] "mV" Vector__XXX
+
+BO_ 292 MD2_CellTemps_Copy: 8 Vector__XXX
+ SG_ MDCellMaxTemps : 0|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellMinTemps : 16|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellAgvTemps : 32|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellDivTemps : 48|16@1+ (0.1,0) [0|30] "deg" Vector__XXX
+ SG_ Variable1 : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 293 MD2_State: 8 Vector__XXX
+ SG_ MDTotalVolt : 0|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ MDMaxVoltPo : 16|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinVoltPo : 24|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMaxTempsPo : 32|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinTempsPo : 40|1@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDINITOK : 41|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDFault : 42|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBalance : 43|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDWaterleak : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellVoltErr : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellTempErr : 46|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBATIC1Err : 47|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDCTCOMErr : 48|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MBCOMErr : 49|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ HMICOMErr : 50|1@1+ (1,0) [0|1] "F" Vector__XXX
+
+BO_ 306 MD3_Infr: 8 Vector__XXX
+ SG_ CellEa : 0|8@1+ (1,0) [0|24] "EA" Vector__XXX
+ SG_ SW_Ver : 8|8@1+ (1,0) [0|250] "Ver" Vector__XXX
+ SG_ NorVolt : 16|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ NorCapacity : 32|16@1+ (0.1,0) [0|300] "Ah" Vector__XXX
+ SG_ RackMinVolt : 48|16@1+ (0.001,0) [2.8|4.5] "" Vector__XXX
+
+BO_ 307 MD3_CellVolt: 8 Vector__XXX
+ SG_ MDCellMaxVolt : 0|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellMinVolt : 16|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellAgvVolt : 32|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellDivVolt : 48|16@1+ (1,0) [0|1000] "mV" Vector__XXX
+
+BO_ 308 MD3_CellTemps: 8 Vector__XXX
+ SG_ MDCellMaxTemps : 0|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellMinTemps : 16|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellAgvTemps : 32|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellDivTemps : 48|16@1+ (0.1,0) [0|30] "deg" Vector__XXX
+
+BO_ 309 MD3_State: 8 Vector__XXX
+ SG_ MDTotalVolt : 0|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ MDMaxVoltPo : 16|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinVoltPo : 24|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMaxTempsPo : 32|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinTempsPo : 40|1@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDINITOK : 41|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDFault : 42|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBalance : 43|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDWaterleak : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellVoltErr : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellTempErr : 46|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBATIC1Err : 47|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDCTCOMErr : 48|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MBCOMErr : 49|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ HMICOMErr : 50|1@1+ (1,0) [0|1] "F" Vector__XXX
+
+BO_ 322 MD4_Infr: 8 Vector__XXX
+ SG_ CellEa : 0|8@1+ (1,0) [0|24] "EA" Vector__XXX
+ SG_ SW_Ver : 8|8@1+ (1,0) [0|250] "Ver" Vector__XXX
+ SG_ NorVolt : 16|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ NorCapacity : 32|16@1+ (0.1,0) [0|300] "Ah" Vector__XXX
+ SG_ RackMinVolt : 48|16@1+ (0.001,0) [2.8|4.5] "" Vector__XXX
+
+BO_ 323 MD4_CellVolt: 8 Vector__XXX
+ SG_ MDCellMaxVolt : 0|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellMinVolt : 16|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellAgvVolt : 32|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellDivVolt : 48|16@1+ (1,0) [0|1000] "mV" Vector__XXX
+
+BO_ 324 MD4_CellTemps: 8 Vector__XXX
+ SG_ MDCellMaxTemps : 0|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellMinTemps : 16|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellAgvTemps : 32|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellDivTemps : 48|16@1+ (0.1,0) [0|30] "deg" Vector__XXX
+
+BO_ 325 MD4_State: 8 Vector__XXX
+ SG_ MDTotalVolt : 0|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ MDMaxVoltPo : 16|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinVoltPo : 24|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMaxTempsPo : 32|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinTempsPo : 40|1@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDINITOK : 41|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDFault : 42|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBalance : 43|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDWaterleak : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellVoltErr : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellTempErr : 46|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBATIC1Err : 47|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDCTCOMErr : 48|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MBCOMErr : 49|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ HMICOMErr : 50|1@1+ (1,0) [0|1] "F" Vector__XXX
+
+BO_ 338 MD5_Infr: 8 Vector__XXX
+ SG_ CellEa : 0|8@1+ (1,0) [0|24] "EA" Vector__XXX
+ SG_ SW_Ver : 8|8@1+ (1,0) [0|250] "Ver" Vector__XXX
+ SG_ NorVolt : 16|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ NorCapacity : 32|16@1+ (0.1,0) [0|300] "Ah" Vector__XXX
+ SG_ RackMinVolt : 48|16@1+ (0.001,0) [2.8|4.5] "" Vector__XXX
+
+BO_ 339 MD5_CellVolt: 8 Vector__XXX
+ SG_ MDCellMaxVolt : 0|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellMinVolt : 16|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellAgvVolt : 32|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellDivVolt : 48|16@1+ (1,0) [0|1000] "mV" Vector__XXX
+
+BO_ 340 MD5_CellTemps: 8 Vector__XXX
+ SG_ MDCellMaxTemps : 0|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellMinTemps : 16|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellAgvTemps : 32|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellDivTemps : 48|16@1+ (0.1,0) [0|30] "deg" Vector__XXX
+
+BO_ 341 MD5_State: 8 Vector__XXX
+ SG_ MDTotalVolt : 0|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ MDMaxVoltPo : 16|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinVoltPo : 24|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMaxTempsPo : 32|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinTempsPo : 40|1@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDINITOK : 41|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDFault : 42|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBalance : 43|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDWaterleak : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellVoltErr : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellTempErr : 46|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBATIC1Err : 47|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDCTCOMErr : 48|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MBCOMErr : 49|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ HMICOMErr : 50|1@1+ (1,0) [0|1] "F" Vector__XXX
+
+BO_ 354 MD6_Infr: 8 Vector__XXX
+ SG_ CellEa : 0|8@1+ (1,0) [0|24] "EA" Vector__XXX
+ SG_ SW_Ver : 8|8@1+ (1,0) [0|250] "Ver" Vector__XXX
+ SG_ NorVolt : 16|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ NorCapacity : 32|16@1+ (0.1,0) [0|300] "Ah" Vector__XXX
+ SG_ RackMinVolt : 48|16@1+ (0.001,0) [2.8|4.5] "" Vector__XXX
+
+BO_ 355 MD6_CellVolt: 8 Vector__XXX
+ SG_ MDCellMaxVolt : 0|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellMinVolt : 16|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellAgvVolt : 32|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellDivVolt : 48|16@1+ (1,0) [0|1000] "mV" Vector__XXX
+
+BO_ 356 MD6_CellTemps: 8 Vector__XXX
+ SG_ MDCellMaxTemps : 0|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellMinTemps : 16|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellAgvTemps : 32|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellDivTemps : 48|16@1+ (0.1,0) [0|30] "deg" Vector__XXX
+
+BO_ 357 MD6_State: 8 Vector__XXX
+ SG_ MDTotalVolt : 0|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ MDMaxVoltPo : 16|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinVoltPo : 24|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMaxTempsPo : 32|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinTempsPo : 40|1@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDINITOK : 41|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDFault : 42|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBalance : 43|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDWaterleak : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellVoltErr : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellTempErr : 46|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBATIC1Err : 47|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDCTCOMErr : 48|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MBCOMErr : 49|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ HMICOMErr : 50|1@1+ (1,0) [0|1] "F" Vector__XXX
+
+BO_ 370 MD7_Infr: 8 Vector__XXX
+ SG_ CellEa : 0|8@1+ (1,0) [0|24] "EA" Vector__XXX
+ SG_ SW_Ver : 8|8@1+ (1,0) [0|250] "Ver" Vector__XXX
+ SG_ NorVolt : 16|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ NorCapacity : 32|16@1+ (0.1,0) [0|300] "Ah" Vector__XXX
+ SG_ RackMinVolt : 48|16@1+ (0.001,0) [2.8|4.5] "" Vector__XXX
+
+BO_ 371 MD7_CellVolt: 8 Vector__XXX
+ SG_ MDCellMaxVolt : 0|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellMinVolt : 16|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellAgvVolt : 32|16@1+ (0.001,0) [2.2|4.5] "V" Vector__XXX
+ SG_ MDCellDivVolt : 48|16@1+ (1,0) [0|1000] "mV" Vector__XXX
+
+BO_ 372 MD7_CellTemps: 8 Vector__XXX
+ SG_ MDCellMaxTemps : 0|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellMinTemps : 16|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellAgvTemps : 32|16@1- (0.1,0) [-30|80] "deg" Vector__XXX
+ SG_ MDCellDivTemps : 48|16@1+ (0.1,0) [0|30] "deg" Vector__XXX
+
+BO_ 373 MD7_State: 8 Vector__XXX
+ SG_ MDTotalVolt : 0|16@1+ (0.01,0) [0.00|100] "V" Vector__XXX
+ SG_ MDMaxVoltPo : 16|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinVoltPo : 24|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMaxTempsPo : 32|8@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDMinTempsPo : 40|1@1+ (1,0) [0|1] "C" Vector__XXX
+ SG_ MDINITOK : 41|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDFault : 42|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBalance : 43|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDWaterleak : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellVoltErr : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ MDCellTempErr : 46|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDBATIC1Err : 47|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MDCTCOMErr : 48|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ MBCOMErr : 49|1@1+ (1,0) [0|1] "F" Vector__XXX
+ SG_ HMICOMErr : 50|1@1+ (1,0) [0|1] "F" Vector__XXX
+
+
+
+
+
+BA_DEF_ BO_ "Receivable" STRING;
+BA_DEF_ BO_ "Sendable" STRING;
+BA_DEF_ SG_ "DisplayDecimalPlaces" INT 0 65535;
+BA_DEF_ SG_ "HexadecimalOutput" STRING;
+BA_DEF_ SG_ "LongName" STRING;
+BA_DEF_  "Title" STRING;
+BA_DEF_DEF_ "Title" "canmatrix-Export";
+
+BA_ "Title"   "Rack1_UnitBMS";
+
+BA_ "Receivable" BO_ 274 "True";
+BA_ "Sendable" BO_ 274 "False";
+BA_ "Receivable" BO_ 275 "True";
+BA_ "Sendable" BO_ 275 "True";
+BA_ "Receivable" BO_ 276 "True";
+BA_ "Sendable" BO_ 276 "True";
+BA_ "Receivable" BO_ 277 "True";
+BA_ "Sendable" BO_ 277 "True";
+BA_ "Receivable" BO_ 290 "True";
+BA_ "Sendable" BO_ 290 "False";
+BA_ "Receivable" BO_ 291 "True";
+BA_ "Sendable" BO_ 291 "True";
+BA_ "Receivable" BO_ 292 "True";
+BA_ "Sendable" BO_ 292 "True";
+BA_ "Receivable" BO_ 293 "True";
+BA_ "Sendable" BO_ 293 "True";
+BA_ "Receivable" BO_ 306 "True";
+BA_ "Sendable" BO_ 306 "False";
+BA_ "Receivable" BO_ 307 "True";
+BA_ "Sendable" BO_ 307 "True";
+BA_ "Receivable" BO_ 308 "True";
+BA_ "Sendable" BO_ 308 "True";
+BA_ "Receivable" BO_ 309 "True";
+BA_ "Sendable" BO_ 309 "True";
+BA_ "Receivable" BO_ 322 "True";
+BA_ "Sendable" BO_ 322 "False";
+BA_ "Receivable" BO_ 323 "True";
+BA_ "Sendable" BO_ 323 "True";
+BA_ "Receivable" BO_ 324 "True";
+BA_ "Sendable" BO_ 324 "True";
+BA_ "Receivable" BO_ 325 "True";
+BA_ "Sendable" BO_ 325 "True";
+BA_ "Receivable" BO_ 338 "True";
+BA_ "Sendable" BO_ 338 "False";
+BA_ "Receivable" BO_ 339 "True";
+BA_ "Sendable" BO_ 339 "True";
+BA_ "Receivable" BO_ 340 "True";
+BA_ "Sendable" BO_ 340 "True";
+BA_ "Receivable" BO_ 341 "True";
+BA_ "Sendable" BO_ 341 "True";
+BA_ "Receivable" BO_ 354 "True";
+BA_ "Sendable" BO_ 354 "False";
+BA_ "Receivable" BO_ 355 "True";
+BA_ "Sendable" BO_ 355 "True";
+BA_ "Receivable" BO_ 356 "True";
+BA_ "Sendable" BO_ 356 "True";
+BA_ "Receivable" BO_ 357 "True";
+BA_ "Sendable" BO_ 357 "True";
+BA_ "Receivable" BO_ 370 "True";
+BA_ "Sendable" BO_ 370 "False";
+BA_ "Receivable" BO_ 371 "True";
+BA_ "Sendable" BO_ 371 "True";
+BA_ "Receivable" BO_ 372 "True";
+BA_ "Sendable" BO_ 372 "True";
+BA_ "Receivable" BO_ 373 "True";
+BA_ "Sendable" BO_ 373 "True";
+
+

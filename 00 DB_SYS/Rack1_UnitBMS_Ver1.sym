@@ -1,0 +1,339 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="Rack1_UnitBMS"
+
+{RECEIVE}
+
+[MD1_Infr]
+ID=112h
+DLC=8
+Var=CellEa unsigned 0,8 /u:EA /max:24
+Var=SW_Ver unsigned 8,8 /u:Ver /max:250
+Var=NorVolt unsigned 16,16 /u:V /f:0.01 /max:100
+Var=NorCapacity unsigned 32,16 /u:Ah /f:0.1 /max:300
+Var=RackMinVolt unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+{SENDRECEIVE}
+
+[MD1_CellVolt]
+ID=113h
+DLC=8
+Var=MDCellMaxVolt unsigned 0,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellMinVolt unsigned 16,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellAgvVolt unsigned 32,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellDivVolt unsigned 48,16 /u:mV /max:1000
+
+[MD1_CellTemps]
+ID=114h
+DLC=8
+Var=MDCellMaxTemps signed 0,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellMinTemps signed 16,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellAgvTemps signed 32,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellDivTemps unsigned 48,16 /u:deg /f:0.1 /max:30
+
+[MD1_State]
+ID=115h
+DLC=8
+Var=MDTotalVolt unsigned 0,16 /u:V /f:0.01 /max:100
+Var=MDMaxVoltPo unsigned 16,8 /u:C /max:1
+Var=MDMinVoltPo unsigned 24,8 /u:C /max:1
+Var=MDMaxTempsPo unsigned 32,8 /u:C /max:1
+Var=MDMinTempsPo unsigned 40,1 /u:C
+Var=MDINITOK unsigned 41,1 /u:F
+Var=MDFault unsigned 42,1 /u:F
+Var=MDBalance unsigned 43,1 /u:F
+Var=MDWaterleak unsigned 44,1
+Var=MDCellVoltErr unsigned 45,1
+Var=MDCellTempErr unsigned 46,1 /u:F
+Var=MDBATIC1Err unsigned 47,1 /u:F
+Var=MDCTCOMErr unsigned 48,1 /u:F
+Var=MBCOMErr unsigned 49,1 /u:F
+Var=HMICOMErr unsigned 50,1 /u:F
+
+{RECEIVE}
+
+[MD2_Infr_Copy]
+ID=122h
+DLC=8
+Var=CellEa unsigned 0,8 /u:EA /max:24
+Var=SW_Ver unsigned 8,8 /u:Ver /max:250
+Var=NorVolt unsigned 16,16 /u:V /f:0.01 /max:100
+Var=NorCapacity unsigned 32,16 /u:Ah /f:0.1 /max:300
+Var=RackMinVolt unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+{SENDRECEIVE}
+
+[MD2_CellVolt_Copy]
+ID=123h
+DLC=8
+Var=MDCellMaxVolt unsigned 0,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellMinVolt unsigned 16,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellAgvVolt unsigned 32,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellDivVolt unsigned 48,16 /u:mV /max:1000
+
+[MD2_CellTemps_Copy]
+ID=124h
+DLC=8
+Var=MDCellMaxTemps signed 0,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellMinTemps signed 16,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellAgvTemps signed 32,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellDivTemps unsigned 48,16 /u:deg /f:0.1 /max:30
+Var=Variable1 unsigned 0,1
+
+[MD2_State]
+ID=125h
+DLC=8
+Var=MDTotalVolt unsigned 0,16 /u:V /f:0.01 /max:100
+Var=MDMaxVoltPo unsigned 16,8 /u:C /max:1
+Var=MDMinVoltPo unsigned 24,8 /u:C /max:1
+Var=MDMaxTempsPo unsigned 32,8 /u:C /max:1
+Var=MDMinTempsPo unsigned 40,1 /u:C
+Var=MDINITOK unsigned 41,1 /u:F
+Var=MDFault unsigned 42,1 /u:F
+Var=MDBalance unsigned 43,1 /u:F
+Var=MDWaterleak unsigned 44,1
+Var=MDCellVoltErr unsigned 45,1
+Var=MDCellTempErr unsigned 46,1 /u:F
+Var=MDBATIC1Err unsigned 47,1 /u:F
+Var=MDCTCOMErr unsigned 48,1 /u:F
+Var=MBCOMErr unsigned 49,1 /u:F
+Var=HMICOMErr unsigned 50,1 /u:F
+
+{RECEIVE}
+
+[MD3_Infr]
+ID=132h
+DLC=8
+Var=CellEa unsigned 0,8 /u:EA /max:24
+Var=SW_Ver unsigned 8,8 /u:Ver /max:250
+Var=NorVolt unsigned 16,16 /u:V /f:0.01 /max:100
+Var=NorCapacity unsigned 32,16 /u:Ah /f:0.1 /max:300
+Var=RackMinVolt unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+{SENDRECEIVE}
+
+[MD3_CellVolt]
+ID=133h
+DLC=8
+Var=MDCellMaxVolt unsigned 0,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellMinVolt unsigned 16,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellAgvVolt unsigned 32,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellDivVolt unsigned 48,16 /u:mV /max:1000
+
+[MD3_CellTemps]
+ID=134h
+DLC=8
+Var=MDCellMaxTemps signed 0,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellMinTemps signed 16,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellAgvTemps signed 32,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellDivTemps unsigned 48,16 /u:deg /f:0.1 /max:30
+
+[MD3_State]
+ID=135h
+DLC=8
+Var=MDTotalVolt unsigned 0,16 /u:V /f:0.01 /max:100
+Var=MDMaxVoltPo unsigned 16,8 /u:C /max:1
+Var=MDMinVoltPo unsigned 24,8 /u:C /max:1
+Var=MDMaxTempsPo unsigned 32,8 /u:C /max:1
+Var=MDMinTempsPo unsigned 40,1 /u:C
+Var=MDINITOK unsigned 41,1 /u:F
+Var=MDFault unsigned 42,1 /u:F
+Var=MDBalance unsigned 43,1 /u:F
+Var=MDWaterleak unsigned 44,1
+Var=MDCellVoltErr unsigned 45,1
+Var=MDCellTempErr unsigned 46,1 /u:F
+Var=MDBATIC1Err unsigned 47,1 /u:F
+Var=MDCTCOMErr unsigned 48,1 /u:F
+Var=MBCOMErr unsigned 49,1 /u:F
+Var=HMICOMErr unsigned 50,1 /u:F
+
+{RECEIVE}
+
+[MD4_Infr]
+ID=142h
+DLC=8
+Var=CellEa unsigned 0,8 /u:EA /max:24
+Var=SW_Ver unsigned 8,8 /u:Ver /max:250
+Var=NorVolt unsigned 16,16 /u:V /f:0.01 /max:100
+Var=NorCapacity unsigned 32,16 /u:Ah /f:0.1 /max:300
+Var=RackMinVolt unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+{SENDRECEIVE}
+
+[MD4_CellVolt]
+ID=143h
+DLC=8
+Var=MDCellMaxVolt unsigned 0,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellMinVolt unsigned 16,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellAgvVolt unsigned 32,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellDivVolt unsigned 48,16 /u:mV /max:1000
+
+[MD4_CellTemps]
+ID=144h
+DLC=8
+Var=MDCellMaxTemps signed 0,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellMinTemps signed 16,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellAgvTemps signed 32,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellDivTemps unsigned 48,16 /u:deg /f:0.1 /max:30
+
+[MD4_State]
+ID=145h
+DLC=8
+Var=MDTotalVolt unsigned 0,16 /u:V /f:0.01 /max:100
+Var=MDMaxVoltPo unsigned 16,8 /u:C /max:1
+Var=MDMinVoltPo unsigned 24,8 /u:C /max:1
+Var=MDMaxTempsPo unsigned 32,8 /u:C /max:1
+Var=MDMinTempsPo unsigned 40,1 /u:C
+Var=MDINITOK unsigned 41,1 /u:F
+Var=MDFault unsigned 42,1 /u:F
+Var=MDBalance unsigned 43,1 /u:F
+Var=MDWaterleak unsigned 44,1
+Var=MDCellVoltErr unsigned 45,1
+Var=MDCellTempErr unsigned 46,1 /u:F
+Var=MDBATIC1Err unsigned 47,1 /u:F
+Var=MDCTCOMErr unsigned 48,1 /u:F
+Var=MBCOMErr unsigned 49,1 /u:F
+Var=HMICOMErr unsigned 50,1 /u:F
+
+{RECEIVE}
+
+[MD5_Infr]
+ID=152h
+DLC=8
+Var=CellEa unsigned 0,8 /u:EA /max:24
+Var=SW_Ver unsigned 8,8 /u:Ver /max:250
+Var=NorVolt unsigned 16,16 /u:V /f:0.01 /max:100
+Var=NorCapacity unsigned 32,16 /u:Ah /f:0.1 /max:300
+Var=RackMinVolt unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+{SENDRECEIVE}
+
+[MD5_CellVolt]
+ID=153h
+DLC=8
+Var=MDCellMaxVolt unsigned 0,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellMinVolt unsigned 16,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellAgvVolt unsigned 32,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellDivVolt unsigned 48,16 /u:mV /max:1000
+
+[MD5_CellTemps]
+ID=154h
+DLC=8
+Var=MDCellMaxTemps signed 0,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellMinTemps signed 16,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellAgvTemps signed 32,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellDivTemps unsigned 48,16 /u:deg /f:0.1 /max:30
+
+[MD5_State]
+ID=155h
+DLC=8
+Var=MDTotalVolt unsigned 0,16 /u:V /f:0.01 /max:100
+Var=MDMaxVoltPo unsigned 16,8 /u:C /max:1
+Var=MDMinVoltPo unsigned 24,8 /u:C /max:1
+Var=MDMaxTempsPo unsigned 32,8 /u:C /max:1
+Var=MDMinTempsPo unsigned 40,1 /u:C
+Var=MDINITOK unsigned 41,1 /u:F
+Var=MDFault unsigned 42,1 /u:F
+Var=MDBalance unsigned 43,1 /u:F
+Var=MDWaterleak unsigned 44,1
+Var=MDCellVoltErr unsigned 45,1
+Var=MDCellTempErr unsigned 46,1 /u:F
+Var=MDBATIC1Err unsigned 47,1 /u:F
+Var=MDCTCOMErr unsigned 48,1 /u:F
+Var=MBCOMErr unsigned 49,1 /u:F
+Var=HMICOMErr unsigned 50,1 /u:F
+
+{RECEIVE}
+
+[MD6_Infr]
+ID=162h
+DLC=8
+Var=CellEa unsigned 0,8 /u:EA /max:24
+Var=SW_Ver unsigned 8,8 /u:Ver /max:250
+Var=NorVolt unsigned 16,16 /u:V /f:0.01 /max:100
+Var=NorCapacity unsigned 32,16 /u:Ah /f:0.1 /max:300
+Var=RackMinVolt unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+{SENDRECEIVE}
+
+[MD6_CellVolt]
+ID=163h
+DLC=8
+Var=MDCellMaxVolt unsigned 0,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellMinVolt unsigned 16,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellAgvVolt unsigned 32,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellDivVolt unsigned 48,16 /u:mV /max:1000
+
+[MD6_CellTemps]
+ID=164h
+DLC=8
+Var=MDCellMaxTemps signed 0,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellMinTemps signed 16,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellAgvTemps signed 32,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellDivTemps unsigned 48,16 /u:deg /f:0.1 /max:30
+
+[MD6_State]
+ID=165h
+DLC=8
+Var=MDTotalVolt unsigned 0,16 /u:V /f:0.01 /max:100
+Var=MDMaxVoltPo unsigned 16,8 /u:C /max:1
+Var=MDMinVoltPo unsigned 24,8 /u:C /max:1
+Var=MDMaxTempsPo unsigned 32,8 /u:C /max:1
+Var=MDMinTempsPo unsigned 40,1 /u:C
+Var=MDINITOK unsigned 41,1 /u:F
+Var=MDFault unsigned 42,1 /u:F
+Var=MDBalance unsigned 43,1 /u:F
+Var=MDWaterleak unsigned 44,1
+Var=MDCellVoltErr unsigned 45,1
+Var=MDCellTempErr unsigned 46,1 /u:F
+Var=MDBATIC1Err unsigned 47,1 /u:F
+Var=MDCTCOMErr unsigned 48,1 /u:F
+Var=MBCOMErr unsigned 49,1 /u:F
+Var=HMICOMErr unsigned 50,1 /u:F
+
+{RECEIVE}
+
+[MD7_Infr]
+ID=172h
+DLC=8
+Var=CellEa unsigned 0,8 /u:EA /max:24
+Var=SW_Ver unsigned 8,8 /u:Ver /max:250
+Var=NorVolt unsigned 16,16 /u:V /f:0.01 /max:100
+Var=NorCapacity unsigned 32,16 /u:Ah /f:0.1 /max:300
+Var=RackMinVolt unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+{SENDRECEIVE}
+
+[MD7_CellVolt]
+ID=173h
+DLC=8
+Var=MDCellMaxVolt unsigned 0,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellMinVolt unsigned 16,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellAgvVolt unsigned 32,16 /u:V /f:0.001 /min:2.2 /max:4.5
+Var=MDCellDivVolt unsigned 48,16 /u:mV /max:1000
+
+[MD7_CellTemps]
+ID=174h
+DLC=8
+Var=MDCellMaxTemps signed 0,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellMinTemps signed 16,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellAgvTemps signed 32,16 /u:deg /f:0.1 /min:-30 /max:80
+Var=MDCellDivTemps unsigned 48,16 /u:deg /f:0.1 /max:30
+
+[MD7_State]
+ID=175h
+DLC=8
+Var=MDTotalVolt unsigned 0,16 /u:V /f:0.01 /max:100
+Var=MDMaxVoltPo unsigned 16,8 /u:C /max:1
+Var=MDMinVoltPo unsigned 24,8 /u:C /max:1
+Var=MDMaxTempsPo unsigned 32,8 /u:C /max:1
+Var=MDMinTempsPo unsigned 40,1 /u:C
+Var=MDINITOK unsigned 41,1 /u:F
+Var=MDFault unsigned 42,1 /u:F
+Var=MDBalance unsigned 43,1 /u:F
+Var=MDWaterleak unsigned 44,1
+Var=MDCellVoltErr unsigned 45,1
+Var=MDCellTempErr unsigned 46,1 /u:F
+Var=MDBATIC1Err unsigned 47,1 /u:F
+Var=MDCTCOMErr unsigned 48,1 /u:F
+Var=MBCOMErr unsigned 49,1 /u:F
+Var=HMICOMErr unsigned 50,1 /u:F
