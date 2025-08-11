@@ -235,6 +235,41 @@ typedef struct _tts_in_pktinfo{
   ts_in_addr ipi_addr; // Destination (from header) address
 }tts_in_pktinfo, *pts_in_pktinfo;
 
+typedef struct _tts_addrinfo{
+  s32 ai_flags;                         // Input flags
+  s32 ai_family;                        // Address family of socket
+  s32 ai_socktype;                      //Socket type
+  s32 ai_protocol;                      // Protocol of socket
+  tts_socklen_t  ai_addrlen;            // Length of socket address
+  pts_sockaddr  ai_addr;                // Socket address of socket
+  char*  ai_canonname;              // Canonical name of service location
+  struct _tts_addrinfo*  ai_next;       // Pointer to next in list
+}tts_addrinfo, *pts_addrinfo, **ppts_addrinfo;
+
+typedef struct _tts_hostent{
+  char*  h_name;          // Official name of the host
+  char** h_aliases;       // A pointer to an array of pointers to alternative host names// terminated by a null pointer
+  s32    h_addrtype;      // Address type
+  s32    h_length;        // The length, in bytes, of the address
+  char** h_addr_list;     // A pointer to an array of pointers to network addresses (in
+                          // network byte order) for the host, terminated by a null pointer
+}tts_hostent, *pts_hostent, **ppts_hostent;
+
+#define LWIP_IPV6_NUM_ADDRESSES 3
+//packed =  1
+typedef struct _tts_net_device{
+  tip4_addr_t ip_addr;
+  tip4_addr_t netmask;
+  tip4_addr_t gw;
+  tip6_addr_t ip6_addr[LWIP_IPV6_NUM_ADDRESSES];
+  u16 mtu;
+  u16 mtu6;
+  u16 vlan;
+  u8 hwaddr[6];
+  u8 flags;
+  u8 index;
+}tts_net_device, *pts_net_device, **ppts_net_device;
+
      
 // CAN frame type ================================================
 typedef struct _TCAN{
@@ -1170,6 +1205,7 @@ typedef struct _TMPVarLIN {
 }TMPVarLIN;
 
 // TSMaster timer ================================================
+// legacy timer before 2025-07-26
 typedef struct _TMPTimerMS {
     void* FObj;
     TProcedure internal_start;
@@ -1189,6 +1225,32 @@ typedef struct _TMPTimerMS {
         return internal_get_interval(FObj);
     }
 }TMPTimerMS;
+
+// timer with singleshot since 2025-07-26
+typedef struct _TMPTimerMSUpg1 {
+    void* FObj;
+    TProcedure internal_start;
+    TProcedure internal_stop;
+    TProcedureSetInt internal_set_interval;
+    TIntFunction internal_get_interval;
+    TProcedure internal_start_singleshot;
+    native_int FDummy[3]; 
+    void start(void) {
+        internal_start(FObj);
+    }
+    void stop(void) {
+        internal_stop(FObj);
+    }
+    void set_interval(const s64 AInterval) {
+        internal_set_interval(FObj, AInterval);
+    }
+    s64 get_interval(void) {
+        return internal_get_interval(FObj);
+    }
+    void start_singleshot(void) {
+        internal_start_singleshot(FObj);
+    }
+}TMPTimerMSUpg1;
 
 // TSMaster application definition ===============================
 #define APP_DEVICE_NAME_LENGTH 32
@@ -1401,6 +1463,9 @@ typedef void(__stdcall* TOnSysVarChange)(const char* ACompleteName);
 typedef void(__stdcall* TOnIoIPData)(pu8 APointer, s32 ASize);
 typedef void(__stdcall* TOnIoIPConnection)(const char* AIPAddress, const s32 APort);
 typedef enum _TUDPFragmentProcessStatus {ufpsNotFragment, ufpsInvalid, ufpsProcessing, ufpsDone} TUDPFragmentProcessStatus, *PUDPFragmentProcessStatus;
+// PDU
+typedef void(__stdcall* TOnAutoSARPDUQueueEvent)(const s32 AChnIdx, const char* APDUName, const u64 ATimestamp, const u8 AIsTx, const u32 AID, const u32 ADataLength, const pu8 AData);
+typedef s32(__stdcall* TOnAutoSARPDUPreTxEvent)(const s32 AChnIdx, const char* APDUName, const u32 AID, const u32 ASrcDataLength, const pu8 ASrcData, const pu32 ADestDataLength, const pu8 ADestData);
 // Automation Module - Graphic Program
 typedef enum _TAutomationModuleRunningState {amrsNotRun, amrsPrepareRun, amrsRunning, amrsPaused, amrsStepping, amrsFinished} TAutomationModuleRunningState, *PAutomationModuleRunningState;
 typedef enum _TLIBAutomationSignalType {lastCANSignal, lastLINSignal, lastSysVar, lastLocalVar, lastConst, lastFlexRaySignal, lastImmediateValue} TLIBAutomationSignalType, *PLIBAutomationSignalType;
@@ -1931,6 +1996,12 @@ typedef s32 (__stdcall* Tsecurity_check_custom_license_valid)(const char* ALicen
 typedef s32 (__stdcall* Tcall_model_initialization)(const pvoid AObj, const char* ADiagramName, const s32 AInCnt, const s32 AOutCnt, const PMBDDataType AInTypes, const PMBDDataType AOutTypes, pnative_int AHandle);
 typedef s32 (__stdcall* Tcall_model_step)(const pvoid AObj, const native_int AHandle, const s64 ATimeUs, const pvoid AInValues, pvoid AOutValues);
 typedef s32 (__stdcall* Tcall_model_finalization)(const pvoid AObj, const native_int AHandle);
+typedef s32 (__stdcall* Tui_hide_main_form)(void);
+typedef s32 (__stdcall* Tui_show_main_form)(const s32 ALeft, const s32 ATop, const s32 AWidth, const s32 AHeight);
+typedef s32 (__stdcall* Tconfigure_can_regs)(const s32 AChn, const float ABaudrateKbps, const u32 ASEG1, const u32 ASEG2, const u32 APrescaler, const u32 ASJW, const bool AOnlyListen, const bool A120OhmConnected);
+typedef s32 (__stdcall* Tconfigure_canfd_regs)(const s32 AChn, const float AArbBaudrateKbps, const u32 AArbSEG1, const u32 AArbSEG2, const u32 AArbPrescaler, const u32 AArbSJW, const float ADataBaudrateKbps, const u32 ADataSEG1, const u32 ADataSEG2, const u32 ADataPrescaler, const u32 ADataSJW, const TCANFDControllerType AControllerType, const TCANFDControllerMode AControllerMode, const bool A120OhmConnected);
+typedef s32 (__stdcall* Tstart_log_verbose)(const pvoid AObj, s32 AFilesizeType, s64 ASizeValue);
+typedef s32 (__stdcall* Tstart_log_w_filename_verbose)(const pvoid AObj, char* AFileName, s32 AFilesizeType, s64 ASizeValue);
 // >>> mp app prototype end <<<
 
 typedef struct _TTSApp {
@@ -2381,7 +2452,15 @@ typedef struct _TTSApp {
     Tcall_model_initialization internal_call_model_initialization;
     Tcall_model_step internal_call_model_step;
     Tcall_model_finalization internal_call_model_finalization;
-    native_int FDummy[608]; // >>> mp app end <<<
+    Tui_hide_main_form ui_hide_main_form;
+    Tui_show_main_form ui_show_main_form;
+    Tconfigure_can_regs configure_can_regs;
+    Tconfigure_canfd_regs configure_canfd_regs;
+    Tstart_log_verbose internal_start_log_verbose;
+    Tstart_log_w_filename_verbose internal_start_log_w_filename_verbose;
+    native_int FDummy[602]; // >>> mp app end <<<
+    s32 start_log_w_filename_verbose(char* AFileName, s32 AFilesizeType, s64 ASizeValue){return internal_start_log_w_filename_verbose(FObj, AFileName, AFilesizeType, ASizeValue);}
+    s32 start_log_verbose(s32 AFilesizeType, s64 ASizeValue){return internal_start_log_verbose(FObj, AFilesizeType, ASizeValue);}
     s32 call_model_finalization(const native_int AHandle){return internal_call_model_finalization(FObj, AHandle);}
     s32 call_model_step(const native_int AHandle, const s64 ATimeUs, const pvoid AInValues, pvoid AOutValues){return internal_call_model_step(FObj, AHandle, ATimeUs, AInValues, AOutValues);}
     s32 call_model_initialization(const char* ADiagramName, const s32 AInCnt, const s32 AOutCnt, const PMBDDataType AInTypes, const PMBDDataType AOutTypes, pnative_int AHandle){return internal_call_model_initialization(FObj, ADiagramName, AInCnt, AOutCnt, AInTypes, AOutTypes, AHandle);}
@@ -2929,6 +3008,22 @@ typedef s32 (__stdcall* Tlin_rbs_unregister_force_refresh_frame_by_id)(const s32
 typedef s32 (__stdcall* Trpc_data_channel_create)(const pvoid AObj, const char* ARpcName, const s32 AIsMaster, const native_int ABufferSizeBytes, const TOnRpcData ARxEvent, pnative_int AHandle);
 typedef s32 (__stdcall* Trpc_data_channel_delete)(const pvoid AObj, native_int AHandle);
 typedef s32 (__stdcall* Trpc_data_channel_transmit)(const pvoid AObj, native_int AHandle, pu8 AAddr, native_int ASizeBytes, s32 ATimeOutMs);
+typedef s32 (__stdcall* Ttssocket_getaddrinfo)(const s32 ANetworkIndex, const char* nodename, const char* servname, const pts_addrinfo hints, ppts_addrinfo res);
+typedef s32 (__stdcall* Ttssocket_freeaddrinfo)(const s32 ANetworkIndex, const pts_addrinfo ai);
+typedef s32 (__stdcall* Ttssocket_gethostname)(const s32 ANetworkIndex, const char* name, ppts_hostent ahostent);
+typedef s32 (__stdcall* Ttssocket_getalldevices)(const s32 ANetworkIndex, ppts_net_device devs);
+typedef s32 (__stdcall* Ttssocket_freedevices)(const s32 ANetworkIndex, pts_net_device devs);
+typedef s32 (__stdcall* Trawsocket_select)(const s32 ANetworkIndex, const s32 maxfdp1, const pts_fd_set readset, const pts_fd_set writeset, const pts_fd_set exceptset, const pts_timeval timeout);
+typedef s32 (__stdcall* Ttssocket_set_host_name)(const s32 ANetworkIndex, const char* AIPAddress, const char* AHostName);
+typedef s32 (__stdcall* Ttsdio_set_pwm_output_async)(const s32 AChn, double ADuty, double AFrequency);
+typedef s32 (__stdcall* Ttsdio_set_vlevel_output_async)(const s32 AChn, s32 AIOStatus);
+typedef s32 (__stdcall* Tcan_il_register_autosar_pdu_event)(const s32 AChn, const s32 AID, const TOnAutoSARPDUQueueEvent AEvent);
+typedef s32 (__stdcall* Tcan_il_unregister_autosar_pdu_event)(const s32 AChn, const s32 AID, const TOnAutoSARPDUQueueEvent AEvent);
+typedef s32 (__stdcall* Tcan_il_register_autosar_pdu_pretx_event)(const s32 AChn, const s32 AID, const TOnAutoSARPDUPreTxEvent AEvent);
+typedef s32 (__stdcall* Tcan_il_unregister_autosar_pdu_pretx_event)(const s32 AChn, const s32 AID, const TOnAutoSARPDUPreTxEvent AEvent);
+typedef s32 (__stdcall* Tcan_rbs_fault_inject_disturb_sequencecounter)(const s32 AChn, const char* ANetworkName, const char* ANodeName, const char* AMessageName, const char* ASignalGroupName, const s32 type, const s32 disturbanceMode, const s32 disturbanceCount, const s32 disturbanceValue, const s32 continueMode);
+typedef s32 (__stdcall* Tcan_rbs_fault_inject_disturb_checksum)(const s32 AChn, const char* ANetworkName, const char* ANodeName, const char* AMessageName, const char* ASignalGroupName, const s32 type, const s32 disturbanceMode, const s32 disturbanceCount, const s32 disturbanceValue);
+typedef s32 (__stdcall* Tcan_rbs_fault_inject_disturb_updatebit)(const s32 AChn, const char* ANetworkName, const char* ANodeName, const char* AMessageName, const char* ASignalGroupName, const s32 disturbanceMode, const s32 disturbanceCount, const s32 disturbanceValue);
 // >>> mp com prototype end <<<
 
 typedef struct _TTSCOM {
@@ -3386,7 +3481,23 @@ typedef struct _TTSCOM {
     Trpc_data_channel_create internal_rpc_data_channel_create;
     Trpc_data_channel_delete internal_rpc_data_channel_delete;
     Trpc_data_channel_transmit internal_rpc_data_channel_transmit;
-    native_int FDummy[579]; // >>> mp com end <<<
+    Ttssocket_getaddrinfo tssocket_getaddrinfo;
+    Ttssocket_freeaddrinfo tssocket_freeaddrinfo;
+    Ttssocket_gethostname tssocket_gethostname;
+    Ttssocket_getalldevices tssocket_getalldevices;
+    Ttssocket_freedevices tssocket_freedevices;
+    Trawsocket_select rawsocket_select;
+    Ttssocket_set_host_name tssocket_set_host_name;
+    Ttsdio_set_pwm_output_async tsdio_set_pwm_output_async;
+    Ttsdio_set_vlevel_output_async tsdio_set_vlevel_output_async;
+    Tcan_il_register_autosar_pdu_event can_il_register_autosar_pdu_event;
+    Tcan_il_unregister_autosar_pdu_event can_il_unregister_autosar_pdu_event;
+    Tcan_il_register_autosar_pdu_pretx_event can_il_register_autosar_pdu_pretx_event;
+    Tcan_il_unregister_autosar_pdu_pretx_event can_il_unregister_autosar_pdu_pretx_event;
+    Tcan_rbs_fault_inject_disturb_sequencecounter can_rbs_fault_inject_disturb_sequencecounter;
+    Tcan_rbs_fault_inject_disturb_checksum can_rbs_fault_inject_disturb_checksum;
+    Tcan_rbs_fault_inject_disturb_updatebit can_rbs_fault_inject_disturb_updatebit;
+    native_int FDummy[563]; // >>> mp com end <<<
     s32 rpc_data_channel_transmit(native_int AHandle, pu8 AAddr, native_int ASizeBytes, s32 ATimeOutMs){return internal_rpc_data_channel_transmit(FObj, AHandle, AAddr, ASizeBytes, ATimeOutMs);}
     s32 rpc_data_channel_delete(native_int AHandle){return internal_rpc_data_channel_delete(FObj, AHandle);}
     s32 rpc_data_channel_create(const char* ARpcName, const s32 AIsMaster, const native_int ABufferSizeBytes, const TOnRpcData ARxEvent, pnative_int AHandle){return internal_rpc_data_channel_create(FObj, ARpcName, AIsMaster, ABufferSizeBytes, ARxEvent, AHandle);}

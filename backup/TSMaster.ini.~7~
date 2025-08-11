@@ -160,6 +160,7 @@ CaptionRenamed=0
 IsExternal=0
 Caption=CAN 数据库
 HWChnCount=2
+<<<<<<< HEAD
 UICommon=0,-1,0,0,Q0FOIERhdGFiYXNl,100,2425,6801007320668783098,0
 UIFilter=
 PropertyHeight=298
@@ -176,6 +177,21 @@ DBOri2=.\DB\CAN\Rack1_UnitBMS_Ver1.dbc
 ChnCAN0=0
 ChnCAN1=1
 ChnCAN2=0
+=======
+UICommon=0,0,0,0,Q0FOIERhdGFiYXNl,100,453,5487921741423305498,0
+UIFilter=
+PropertyHeight=298
+PropertyVisible=1
+DBFilesCount=2
+DBOriCount=2
+ChnCANCount=2
+DBFiles0=.\DB\CAN\Master_SubR1_BMS_R2_VER2.pdbc
+DBFiles1=.\DB\CAN\Rack1_UnitBMS_Ver1.pdbc
+DBOri0=.\00 DB_SYS\Master_SubR1_BMS_R2_VER2.dbc
+DBOri1=.\00 DB_SYS\PMS_Master_BMS_CAN_R8_VER3.dbc
+ChnCAN0=0
+ChnCAN1=1
+>>>>>>> e40c1c0243527ac205681edb729df46c2745353d
 
 [CANStat]
 AutoStart=0
@@ -232,7 +248,11 @@ TfrmCANRBS_0=80,44,1104,812
 TfrmMPLibrary_0=324,98,1348,866
 TfrmSignalMapping_0=324,98,1348,866
 TfrmNumeric_0=170,78,927,345
+<<<<<<< HEAD
 TfrmCANDatabase1=-1468,581,-452,1212
+=======
+TfrmCANDatabase1=-1404,625,-517,1213
+>>>>>>> e40c1c0243527ac205681edb729df46c2745353d
 TfrmAutomotiveFileConverter=-1399,567,-522,1179
 
 [RTL_Form_Position_MDI]
