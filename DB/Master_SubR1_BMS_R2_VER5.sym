@@ -1,0 +1,291 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="canmatrix-Export"
+{ENUMS}
+
+
+{SENDRECEIVE}
+
+[BMA1]
+ID=700h
+Type=Standard
+DLC=8
+Var=BSA1_WakeUP unsigned 0,1 /min:0 /max:1 /d:0
+Var=BSA1_Mode unsigned 1,1 /min:0 /max:1 /d:0
+Var=BSA11eset unsigned 8,1 /min:0 /max:1 /d:0
+Var=BSA1_Cell_MinV unsigned 32,16 /f:0.001 /min:2.8 /max:4.5
+Var=BSA1_Cell_AGVT signed 48,16 /f:0.1 /min:-40 /max:100 /d:0
+
+[HMI1_HMI]
+ID=511h
+Type=Standard
+DLC=8
+Var=HMI1_ComEn_Urx unsigned 0,1 /min:0 /max:1 /d:0
+Var=HMI1_VoltReq_Urx unsigned 1,1 /min:0 /max:1 /d:0
+Var=HMI1_TempsReq_Urx unsigned 2,1 /min:0 /max:1 /d:0
+Var=HMI1_Cell_AGVT_Urx signed 32,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=HMI1_Cell_MinV_Urx unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+[Rack1_Calc]
+ID=601h
+Type=Standard
+DLC=8
+Var=BRA1_Volt_Total unsigned 0,16 /f:0.1 /min:400 /max:800
+Var=BRA1_Curr_Total signed 16,16 /f:0.1 /min:-500 /max:500 /d:0
+Var=BRA1_SOC unsigned 32,16 /f:0.1 /min:0 /max:120 /d:0
+Var=BRA1_SOH unsigned 48,16 /f:0.1 /min:0 /max:100 /d:0
+
+[Rack1_Cell_Pocalc]
+ID=607h
+Type=Standard
+DLC=8
+Var=BRA1_Cell_MaxV1ackPo unsigned 0,8 /min:1 /max:4
+Var=BRA1_Cell_MaxV_CellPo unsigned 8,8 /min:1 /max:168
+Var=BRA1_Cell_MinV1ackPo unsigned 16,8 /min:1 /max:4
+Var=BRA1_Cell_MinV_CellPo unsigned 24,8 /min:1 /max:168
+Var=BRA1_Cell_MaxT1ackPo unsigned 32,8 /min:1 /max:4
+Var=BRA1_Cell_MaxT_CellPo unsigned 40,8 /min:1 /max:168
+Var=BRA1_Cell_MinT1ackPo unsigned 48,8 /min:1 /max:4
+Var=BRA1_Cell_MinT_CellPo unsigned 56,8 /min:1 /max:168
+
+[Rack1_Cell_Tcalc]
+ID=606h
+Type=Standard
+DLC=8
+Var=BRA1_Cell_MaxT signed 0,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=BRA1_Cell_MinT signed 16,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=BRA1_Cell_AVGT signed 32,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=BRA1_Cell_DeviT unsigned 48,16 /f:0.1 /min:-40 /max:100 /d:0
+
+[Rack1_Cell_Vcalc]
+ID=605h
+Type=Standard
+DLC=8
+Var=BRA1_Cell_MaxV unsigned 0,16 /f:0.001 /min:2.8 /max:4.5
+Var=BRA1_Cell_MinV unsigned 16,16 /f:0.001 /min:2.8 /max:4.5
+Var=BRA1_Cell_AVGV unsigned 32,16 /f:0.001 /min:2.8 /max:4.5
+Var=BRA1_Cell_DeviV unsigned 48,16 /min:0 /max:500 /d:0
+
+[Rack1_Modul1_Info]
+ID=608h
+Type=Standard
+DLC=8
+Var=BM1_1_Volt_Total unsigned 0,16 /f:0.1 /min:48 /max:108
+Var=BM1_1_Agv_Volt unsigned 16,8 /f:0.001 /min:2.8 /max:4.5
+Var=BM1_1_Agv_Temp signed 32,8 /f:0.1 /min:-40 /max:100 /d:0
+Var=BM1_1_OPS_INITOK unsigned 48,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_OPS_Fault unsigned 49,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_OPS_Balan_On_OFF unsigned 50,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_OPS_Waterleak_Err unsigned 51,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_OPS_CellVolt_Err unsigned 52,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_OPS_CellTemps_Err unsigned 53,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_BATIC_Err unsigned 54,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_CTCOM_Err unsigned 55,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_1_OPS_MBCOM_Err unsigned 56,1 /f:0 /min:0 /max:1 /d:0
+
+[Rack1_Modul2_Info]
+ID=609h
+Type=Standard
+DLC=8
+Var=BM1_2_Volt_Total unsigned 0,16 /f:0.1 /min:48 /max:108
+Var=BM1_2_Agv_Volt unsigned 16,8 /f:0.001 /min:2.8 /max:4.5
+Var=BM1_2_Agv_Temp signed 32,8 /f:0.1 /min:-40 /max:100 /d:0
+Var=BM1_2_OPS_INITOK unsigned 48,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_OPS_Fault unsigned 49,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_OPS_Balan_On_OFF unsigned 50,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_OPS_Waterleak_Err unsigned 51,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_OPS_CellVolt_Err unsigned 52,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_OPS_CellTemps_Err unsigned 53,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_BATIC_Err unsigned 54,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_CTCOM_Err unsigned 55,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_2_MBCOM_Err unsigned 56,1 /f:0 /min:0 /max:1 /d:0
+
+[Rack1_Modul3_Info]
+ID=60Ah
+Type=Standard
+DLC=8
+Var=BM1_3_Volt_Total unsigned 0,16 /f:0.1 /min:48 /max:108
+Var=BM1_3_Agv_Volt unsigned 16,8 /f:0.001 /min:2.8 /max:4.5
+Var=BM1_3_Agv_Temp signed 32,8 /f:0.1 /min:-40 /max:100 /d:0
+Var=BM1_3_INITOK unsigned 48,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_Fault unsigned 49,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_Balan_On_OFF unsigned 50,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_Waterleak_Err unsigned 51,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_CellVolt_Err unsigned 52,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_CellTemps_Err unsigned 53,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_BATIC_Err unsigned 54,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_CTCOM_Err unsigned 55,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_3_MBCOM_Err unsigned 56,1 /f:0 /min:0 /max:1 /d:0
+
+[Rack1_Modul4_Info]
+ID=60Bh
+Type=Standard
+DLC=8
+Var=BM1_4_Volt_Total unsigned 0,16 /f:0.1 /min:48 /max:108
+Var=BM1_4_Agv_Volt unsigned 16,8 /f:0.001 /min:2.8 /max:4.5
+Var=BM1_4_Agv_Temp signed 32,8 /f:0.1 /min:-40 /max:100 /d:0
+Var=BM1_4_INITOK unsigned 48,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_Fault unsigned 49,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_Balan_On_OFF unsigned 50,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_Waterleak_Err unsigned 51,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_CellVolt_Err unsigned 52,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_CellTemps_Err unsigned 53,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_BATIC_Err unsigned 54,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_CTCOM_Err unsigned 55,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_4_MBCOM_Err unsigned 56,1 /f:0 /min:0 /max:1 /d:0
+
+[Rack1_Modul5_Info]
+ID=60Ch
+Type=Standard
+DLC=8
+Var=BM1_5_Volt_Total unsigned 0,16 /f:0.1 /min:48 /max:108
+Var=BM1_5_Agv_Volt unsigned 16,8 /f:0.001 /min:2.8 /max:4.5
+Var=BM1_5_Agv_Temp signed 32,8 /f:0.1 /min:-40 /max:100 /d:0
+Var=BM1_5_INITOK unsigned 48,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_Fault unsigned 49,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_Balan_On_OFF unsigned 50,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_Waterleak_Err unsigned 51,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_CellVolt_Err unsigned 52,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_CellTemps_Err unsigned 53,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_BATIC_Err unsigned 54,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_CTCOM_Err unsigned 55,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_5_MBCOM_Err unsigned 56,1 /f:0 /min:0 /max:1 /d:0
+
+[Rack1_Modul6_Info]
+ID=60Dh
+Type=Standard
+DLC=8
+Var=BM1_6_Volt_Total unsigned 0,16 /f:0.1 /min:48 /max:108
+Var=BM1_6_Agv_Volt unsigned 16,8 /f:0.001 /min:2.8 /max:4.5
+Var=BM1_6_Agv_Temp signed 32,8 /f:0.1 /min:-40 /max:100 /d:0
+Var=BM1_6_INITOK unsigned 48,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_6_Fault unsigned 49,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_6_Balan_On_OFF unsigned 50,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_6_Waterleak_Err unsigned 51,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_6_CTCOM_Err unsigned 55,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_6_MBCOM_Err unsigned 56,1 /f:0 /min:0 /max:1 /d:0
+
+[Rack1_Modul7_Info]
+ID=60Eh
+Type=Standard
+DLC=8
+Var=BM1_7_Volt_Total unsigned 0,16 /f:0.1 /min:48 /max:108
+Var=BM1_7_Agv_Volt unsigned 16,8 /f:0.001 /min:2.8 /max:4.5
+Var=BM1_7_Agv_Temp signed 32,8 /f:0.1 /min:-40 /max:100 /d:0
+Var=BM1_7_INITOK unsigned 48,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_7_Fault unsigned 49,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_7_Balan_On_OFF unsigned 50,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_7_Waterleak_Err unsigned 51,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_7_CTCOM_Err unsigned 55,1 /f:0 /min:0 /max:1 /d:0
+Var=BM1_7_MBCOM_Err unsigned 56,1 /f:0 /min:0 /max:1 /d:0
+
+[Rack1_PWRCalc]
+ID=604h
+Type=Standard
+DLC=8
+Var=BRA1_CHAPWCont unsigned 0,16 /f:0.1 /min:0 /max:43 /d:0
+Var=BRA1_DisCHAPWCont unsigned 16,16 /f:0.1 /min:0 /max:100 /d:0
+Var=BRA1_CHAPWPeak unsigned 32,16 /f:0.1 /min:0 /max:60 /d:0
+Var=BRA1_DisCHAPWPeak unsigned 48,16 /f:0.1 /min:0 /max:200 /d:0
+
+[Rack1_ProtectState]
+ID=603h
+Type=Standard
+DLC=8
+Var=BRA1_Wn_Dischager_OC unsigned 0,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Chager_OC unsigned 1,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_SOC_OV unsigned 2,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_SOC_Un unsigned 3,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_OV unsigned 4,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_UV unsigned 5,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Cell_OV unsigned 6,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Cell_UV unsigned 7,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Cell_UnbalV unsigned 8,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_DisCharger_Cell_OT unsigned 9,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Charger_Cell_OT unsigned 10,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_DisCharger_Cell_UT unsigned 11,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Charger_Cell_UT unsigned 12,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Cell_UnbalT unsigned 13,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Discharger_UnbaPWR unsigned 14,1 /min:0 /max:1 /d:0
+Var=BRA1_Wn_Charger_UnbaPWR unsigned 15,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Dischager_OC unsigned 16,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Chager_OC unsigned 17,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_SOC_OV unsigned 18,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_SOC_Un unsigned 19,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_OV unsigned 20,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_UV unsigned 21,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Cell_OV unsigned 22,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Cell_UV unsigned 23,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Cell_UnbalV unsigned 24,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_DisCharger_Cell_OT unsigned 25,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Charger_Cell_OT unsigned 26,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_DisCharger_Cell_UT unsigned 27,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Charger_Cell_UT unsigned 28,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Cell_UnbalT unsigned 29,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Discharger_UnbaPWR unsigned 30,1 /min:0 /max:1 /d:0
+Var=BRA1_FLT_Charger_UnbaPWR unsigned 31,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Dischager_OC unsigned 32,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Chager_OC unsigned 33,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_SOC_OV unsigned 34,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_SOC_Un unsigned 35,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_OV unsigned 36,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_UV unsigned 37,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Cell_OV unsigned 38,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Cell_UV unsigned 39,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Cell_UnbalV unsigned 40,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_DisCharger_Cell_OT unsigned 41,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Charger_Cell_OT unsigned 42,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_DisCharger_Cell_UT unsigned 43,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Charger_Cell_UT unsigned 44,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Cell_UnbalT unsigned 45,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Discharger_UnbaPWR unsigned 46,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Charger_UnbaPWR unsigned 47,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct1ly_Err unsigned 48,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_IN_COM_Err unsigned 49,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_EX_COM_Err unsigned 50,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_CT_COM_Err unsigned 51,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_Water_Leak_Err unsigned 52,1 /min:0 /max:1 /d:0
+Var=BRA1_Prtct_EMS_SW_Err unsigned 53,1 /min:0 /max:1 /d:0
+
+[Rack1_State]
+ID=602h
+Type=Standard
+DLC=8
+Var=BRA1_Divice_Status unsigned 0,8 /min:0 /max:4 /d:0
+Var=BRA1_Protect_Status unsigned 8,8 /min:0 /max:4 /d:0
+Var=BRA1_Balance unsigned 16,1 /min:0 /max:1 /d:0
+Var=BRA1_Neg1ly unsigned 17,1 /min:0 /max:1 /d:0
+Var=BRA1_Pos1ly unsigned 18,1 /min:0 /max:1 /d:0
+Var=BRA1_PreChar1ly unsigned 19,1 /min:0 /max:1 /d:0
+Var=BRA1_MSD_AUX unsigned 20,1 /min:0 /max:1 /d:0
+Var=BRA1_EMG_SW unsigned 21,1 /min:0 /max:1 /d:0
+Var=BRA1_Water_leak unsigned 22,1 /min:0 /max:1 /d:0
+Var=BRA1_Ah signed 32,16 /min:-100 /max:-100
+
+[Rack1_Unit]
+ID=510h
+Type=Standard
+DLC=8
+Var=BRA1_Status_Urx unsigned 3,0 /min:0 /max:1 /d:0
+Var=BRA1_ComEn_Urx unsigned 8,1 /min:0 /max:1 /d:0
+Var=BRA11eset_Urx unsigned 9,1 /min:0 /max:1 /d:0
+Var=BRA1_Cell_AGVT_Urx signed 32,16 /f:0.1 /min:-40 /max:100 /d:0
+Var=BRA1_Cell_MinV_Urx unsigned 48,16 /f:0.001 /min:2.8 /max:4.5
+
+[Rack1__Product]
+ID=600h
+Type=Standard
+DLC=8
+Var=BRA1_Type unsigned 0,8 /min:0 /max:10 /d:0
+Var=BRA1_SW_Ver unsigned 8,8 /f:0.1 /min:1 /max:2.55
+Var=BRA1_Normal_Volt unsigned 16,16 /f:0.1 /min:400 /max:800
+Var=BRA1_apacity unsigned 32,16 /f:0.1 /min:30 /max:500
+Var=BRA1_Serial unsigned 48,8 /min:0 /max:200 /d:0
+Var=BRA1_Parallel unsigned 56,8 /min:0 /max:10 /d:0
+
+[Debugg]
+ID=60Fh
+Type=Standard
+DLC=8
+Var=RackRx_WakeUp unsigned 0,1 /u:F /min:0 /max:1 /d:0
+Var=RackRx_ReSet unsigned 8,1 /u:F /min:0 /max:1 /d:0
+
